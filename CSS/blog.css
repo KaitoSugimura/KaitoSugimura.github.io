@@ -1,8 +1,14 @@
 /*blog*/
+
+main {
+    position: relative;
+    top: 4em; 
+    width: 100%;
+}
+
 .post {
     display: block;
-    width: 50%;
-    position: relative;
+    width: 90%;
     text-align: left;
     margin: 1rem auto;
     background-color: white;
@@ -31,4 +37,59 @@
 
 .post img {
     width: 100%
+}
+
+/*>320px screens*/
+@media only screen and (min-width: 320px){
+
+}
+
+/*>375px screens*/
+@media only screen and (min-width: 375px){
+
+
+}
+
+/*>425px screens*/
+@media only screen and (min-width: 425px){
+
+}
+
+/*>768px screens*/
+@media only screen and (min-width: 768px){
+}
+
+/*>1024px screens*/
+@media only screen and (min-width: 1024px){
+
+    .post {
+        width: 50%;
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+    
+    .post h2 {
+        font-size: 0.8rem;
+        padding-bottom: 0.2rem;
+    }
+    
+    .post .date {
+        font-size: 0.8rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .post p {
+        padding-bottom: 0.3rem;
+    }
+}
+
+/*>1440px screens*/
+@media only screen and (min-width: 1440px){
+
+
+}
+
+/*>1600px screens*/
+@media only screen and (min-width: 1600px){
+
 }

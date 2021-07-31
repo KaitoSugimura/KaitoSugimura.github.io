@@ -22,6 +22,11 @@ main p {
     font-family: 'Times New Roman', Times, serif;
 } 
 
+#buttonOfFate{
+    font-size: 4rem;
+    margin: 2rem auto;
+    padding: 2rem;
+}
 /*>320px screens*/
 @media only screen and (min-width: 320px){
 
