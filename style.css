@@ -1,7 +1,84 @@
-h1 {
-    color: blue;
+html {
+    font-size: 12px;
+    background-color: #e8ceae;
 }
 
-#me {
-    height: 1000px;
+/* header */
+.header{
+    background-color: #a8e0df;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 4rem;
+    padding: 0 15%;
+    font-size: 1rem;
 }
+
+.header .logo {
+    flex-grow: 1;
+    color: black;
+}
+
+.header li {
+    display: inline;
+    padding-right: 1rem;
+    border: 3px;    
+}
+
+/* Banner */
+main .intro {
+    background-image: url('./KaitoCliff.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+main h1 {
+    text-align: center;
+    padding: 10rem 1rem;
+}
+
+/*HTML font change for Larger screens*/
+@media only screen and (min-width: 920px){
+    html {
+        font-size: 16px;
+    }
+}
+
+/*Logo removal for smaller screens*/
+@media only screen and (max-width: 690px){
+    .header .logo {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 690px){
+    main h1 {
+        padding: 15rem 1rem;
+    }
+}
+
+/*>1200px screens*/
+@media only screen and (min-width: 1200px){
+    main h1 {
+        padding: 20rem 1rem;
+    }
+}
+
+/*>1600px screens*/
+@media only screen and (min-width: 1600px){
+    main h1 {
+        padding: 25rem 1rem;
+    }
+}
+
+/*copy and paste
+
+/*  */
+
+@media only screen and (max-width: ){
+
+}
+
+*/
