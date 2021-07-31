@@ -7,7 +7,7 @@ html {
 
 /* header */
 .header{
-    background-color: rgb(128, 229, 255, 0.5);
+    background-color: rgb(128, 229, 255, 0.75);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -110,14 +110,6 @@ html {
     background-color: white;
     font-size: 0.75rem;
 }
-/* Article main */
-
-article {
-    position: relative;
-    top: 100px;
-    text-align: center;
-}
-
 
 /*Logo removal for smaller screens*/
 @media only screen and (max-width: 768px){

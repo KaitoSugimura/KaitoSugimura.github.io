@@ -1,6 +1,66 @@
-main h1 {
+main {
+    position: static;
+    display: block;
+    font-family: Papyrus;
     position: relative;
     text-align: center;
+    top: 75px;
+}
+
+
+main h1 {
     font-size: 2.5rem;
-    top: 100px;
+}
+
+main h2 {
+    font-style: italic;
+    font-size: 1rem;
+    padding: 0.5rem 0rem 2rem 0rem;
+}
+
+main p {
+    font-family: 'Times New Roman', Times, serif;
+} 
+
+/*>320px screens*/
+@media only screen and (min-width: 320px){
+
+}
+
+/*>375px screens*/
+@media only screen and (min-width: 375px){
+
+
+}
+
+/*>425px screens*/
+@media only screen and (min-width: 425px){
+
+}
+
+/*>768px screens*/
+@media only screen and (min-width: 768px){
+}
+
+/*>1024px screens*/
+@media only screen and (min-width: 1024px){
+    main {
+        top: 110px;
+    }
+    
+    main h2 {
+        font-size: 1rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/*>1440px screens*/
+@media only screen and (min-width: 1440px){
+
+
+}
+
+/*>1600px screens*/
+@media only screen and (min-width: 1600px){
+
 }
