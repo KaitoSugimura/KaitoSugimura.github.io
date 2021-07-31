@@ -14,19 +14,19 @@ function PhotoRotate () {
     }
     else if (PhotoIndex === 1) {
         bannerImg.style.backgroundImage = "url('Photos/Karate.jpg')";
-        title.style.color = '#ffffff'
+        title.style.color = '#000'
         title.style.top = '4.2rem'
     }
     else if (PhotoIndex === 2) {
         bannerImg.style.backgroundImage = "url('Photos/KarateWin.jpg')";
-        title.style.color = 'rgb(255, 214, 51)'
+        title.style.color = 'black'
         title.style.top = '21rem'
     }
 } 
 
 function Border () {
     if (BorderSwitch===false) {
-        title.style.backgroundColor = 'rgba(0, 0, 0, 0.5)'
+        title.style.backgroundColor = 'rgba(255, 255, 255, 0.5)'
         BorderButton.innerHTML = 'Text Border Off'
         BorderSwitch = true
     } else {
