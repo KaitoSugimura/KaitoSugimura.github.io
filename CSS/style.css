@@ -4,6 +4,7 @@ html {
     background-color: #e8ceae;
 }
 
+
 /* header */
 .header{
     background-color: rgb(128, 229, 255, 0.5);
@@ -14,6 +15,7 @@ html {
     padding: 0 15%;
     font-size: 1rem;
     position: fixed;
+    top: 0;
     width: 100%;
     box-sizing: border-box;
     z-index: 10;
@@ -41,7 +43,7 @@ html {
 /* Banner */
 #banner {
     position: relative;
-    background-image: url('Photos/KaitoCliff.jpg');
+    background-image: url('../Photos/KaitoCliff.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -101,10 +103,14 @@ html {
     height: auto;  
 }
 
+/* Article main */
+
 article {
     position: relative;
-    top: 1000px;
+    top: 100px;
+    text-align: center;
 }
+
 
 /*Logo removal for smaller screens*/
 @media only screen and (max-width: 768px){
