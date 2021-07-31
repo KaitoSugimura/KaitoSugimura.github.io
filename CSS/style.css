@@ -55,6 +55,7 @@ html {
 
 #banner span {
     text-align: center;
+    margin: 0 auto;
     padding: 6rem 0.75rem 0.75rem 0.75rem;
     font-size: 2rem;
     font-family: 'Indie Flower', cursive;
@@ -149,6 +150,12 @@ article {
 @media only screen and (min-width: 1024px){
     html {
         font-size: 20px;
+    }
+    #rightButton img {
+        width: 60px;   
+    }
+    #leftButton img {
+        width: 60px;   
     }
 
 }
