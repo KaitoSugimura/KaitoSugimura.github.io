@@ -1,3 +1,4 @@
+
 html {
     font-size: 12px;
     background-color: #e8ceae;
@@ -5,15 +6,22 @@ html {
 
 /* header */
 .header{
-    background-color: #a8e0df;
+    background-color: rgb(128, 229, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 4rem;
     padding: 0 15%;
     font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 10;
 }
 
+.header:hover {
+    background-color: rgb(128, 229, 255, 1);
+}
 .header .logo {
     flex-grow: 1;
     color: black;
@@ -25,59 +33,133 @@ html {
     border: 3px;    
 }
 
+.header li a {
+    text-decoration: none;
+    color: #000;
+}
+
 /* Banner */
-main .intro {
-    background-image: url('./KaitoCliff.jpg');
+#banner {
+    position: relative;
+    background-image: url('Photos/KaitoCliff.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     width: 100%;
+    height: 31rem;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-.intro h1 {
+#banner span {
     text-align: center;
-    padding: 10rem 1rem;
+    padding: 6rem 0.75rem 0.75rem 0.75rem;
     font-size: 2rem;
     font-family: 'Indie Flower', cursive;
-    color: #FFD700;
+    color: #0fb0f0;
 
+}
+#title {
+    position: relative;
+    top: 3.2rem;
+    padding: 0.25rem;
+}
+
+#rightButton {
+    position: absolute;
+    top: 14rem;
+    right: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 0.3rem;
+    border: none;
+}
+
+#rightButton:hover {
+    background-color: rgba(77, 154, 206, 0.5);
+}
+
+#rightButton img {
+    width: 30px;  
+    height: auto;  
+}
+
+#leftButton {
+    position: absolute;
+    top: 14rem;
+    left: 0.2rem;
+    background-color: rgba(255, 255, 255, 0.26);
+    border-radius: 0.3rem;
+    border: none;
+}
+
+#leftButton:hover {
+    background-color: rgba(77, 154, 206, 0.5);
+}
+
+#leftButton img {
+    width: 30px;  
+    height: auto;  
+}
+
+article {
+    position: relative;
+    top: 1000px;
 }
 
 /*Logo removal for smaller screens*/
-@media only screen and (max-width: 690px){
+@media only screen and (max-width: 768px){
     .header .logo {
         display: none;
     }
 }
 
-@media only screen and (min-width: 690px){
-    .intro h1 {
-        padding: 15rem 1rem;
+/*>320px screens*/
+@media only screen and (min-width: 320px){
+    html {
+        font-size: 13px;
     }
 }
 
-/*>920px screens*/
-@media only screen and (min-width: 920px){
+/*>375px screens*/
+@media only screen and (min-width: 375px){
+    html {
+        font-size: 14px;
+    }
+
+}
+
+/*>425px screens*/
+@media only screen and (min-width: 425px){
     html {
         font-size: 16px;
     }
 }
 
-/*>1200px screens*/
-@media only screen and (min-width: 1200px){
+/*>768px screens*/
+@media only screen and (min-width: 768px){
+}
+
+/*>1024px screens*/
+@media only screen and (min-width: 1024px){
     html {
         font-size: 20px;
     }
 
-    .intro h1 {
-        padding: 18rem 1rem;
+}
+
+/*>1440px screens*/
+@media only screen and (min-width: 1440px){
+    html {
+        font-size: 22px;
     }
+
+
 }
 
 /*>1600px screens*/
 @media only screen and (min-width: 1600px){
-    .intro h1 {
-        padding: 20rem 1rem;
+    html {
+        font-size: 23px;
     }
 }
 
