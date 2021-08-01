@@ -1,0 +1,22 @@
+#tips {
+    width: 100%;
+    display: none;
+    background-color: #e8ceae
+
+}
+
+#tips li {
+    padding: 0.75rem 0;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#tipButton {
+    width: 100%;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+#tipButton:hover {
+    border: solid 2px black;
+}

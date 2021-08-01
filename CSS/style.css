@@ -111,6 +111,7 @@ html {
     font-size: 0.75rem;
 }
 
+
 /*Logo removal for smaller screens*/
 @media only screen and (max-width: 768px){
     .header .logo {
@@ -159,6 +160,40 @@ html {
         font-size: 1.25rem;
     }
 
+    /*change*/
+    .header{
+        background-color: rgb(128, 229, 255, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 4rem;
+        padding: 0 15%;
+        font-size: 1rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 10;
+    }
+    
+    .header:hover {
+        background-color: rgb(128, 229, 255, 1);
+    }
+    .header .logo {
+        flex-grow: 1;
+        color: black;
+    }
+    
+    .header li {
+        display: inline;
+        padding-right: 1rem;
+        border: 3px;    
+    }
+    
+    .header li a {
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 /*>1440px screens*/
