@@ -4,7 +4,6 @@ html {
     background-color: #e8ceae;
 }
 
-
 /* header */
 .header{
     background-color: rgb(128, 229, 255, 0.75);
@@ -32,7 +31,10 @@ html {
 .header li {
     display: inline;
     padding-right: 1rem;
-    border: 3px;    
+}
+
+.header li:hover {
+    border: solid 1px black;  
 }
 
 .header li a {
@@ -111,6 +113,21 @@ html {
     font-size: 0.75rem;
 }
 
+/* FOOTER */
+footer {
+    display: block;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 22rem;
+    background-color: grey;
+}
+
+footer h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: white;
+}
 
 /*Logo removal for smaller screens*/
 @media only screen and (max-width: 768px){
@@ -195,6 +212,8 @@ html {
         color: #000;
     }
 }
+
+
 
 /*>1440px screens*/
 @media only screen and (min-width: 1440px){

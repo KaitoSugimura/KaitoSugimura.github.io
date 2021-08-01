@@ -1,29 +1,33 @@
 
 main {
-    position: static;
+    position: relative;
     display: block;
     font-family: Papyrus;
-    position: relative;
     text-align: center;
     top: 75px;
+    padding-bottom: 5.5rem;
 }
 
 
 main h1 {
+    display: block;
     font-size: 2.5rem;
 }
 
 main h2 {
+    display: block;
     font-style: italic;
     font-size: 1rem;
     padding: 0.5rem 0rem 2rem 0rem;
 }
 
 main p {
+    display: block;
     font-family: 'Times New Roman', Times, serif;
 } 
 
 #buttonOfFate{
+    display: block;
     font-size: 4rem;
     margin: 2rem auto;
     padding: 2rem;
