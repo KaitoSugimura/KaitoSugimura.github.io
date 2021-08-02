@@ -73,24 +73,25 @@ h3 {
 .omikuji{
     margin: 1rem auto;
     display: flex;
-    width: 50%;
-
+    width: 100%;
+    align-items: center;
 }
-#cover {
-    width: 350px;
-    height: 730px;
-    background-image: url('../Photos/Omikuji.png');
+
+.cover {
+    display: inline-block;
+    width: 13.845em;
+    height: 28.86em;
     border: 2px solid red;
     margin: 1rem auto;
 }
 
-#kuji {
-    width: 350px;
-    height: 730px;
+.kuji {
+    width: 13.845em;
+    height: 28.86em;
     border: 2px solid red;
     margin: 1rem auto;
-    display: none;
     background-color: white;
+    display: none;
 }
 
 
@@ -124,6 +125,11 @@ h3 {
     main h2 {
         font-size: 1rem;
         padding-bottom: 2rem;
+    }
+
+    .omikuji{
+        width: 50%;
+    
     }
 }
 
