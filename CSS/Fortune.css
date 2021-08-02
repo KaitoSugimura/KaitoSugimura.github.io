@@ -1,37 +1,100 @@
 
 main {
-    position: relative;
-    display: block;
+    position: static;
     font-family: Papyrus;
     text-align: center;
-    top: 75px;
     padding-bottom: 5.5rem;
 }
 
+main article {
+    background-image: url('../Photos/ShintoShrineGate.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    border-radius: 0.4rem;
+}
 
 main h1 {
     display: block;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
 main h2 {
     display: block;
     font-style: italic;
+    font-weight: bold;
     font-size: 1rem;
     padding: 0.5rem 0rem 2rem 0rem;
 }
 
-main p {
-    display: block;
+main .info {
+    display: table;
     font-family: 'Times New Roman', Times, serif;
+    margin: 0 auto;
+    background-color: rgba(245, 245, 245, 0.85);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
 } 
+
+.WhatIsOmikuji {
+    display: table;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 1rem auto;
+    padding: 1rem;
+    font-weight: 600;
+    background-color: rgba(240,128,128, 0.75);
+}
 
 #buttonOfFate{
     display: block;
     font-size: 4rem;
     margin: 2rem auto;
+    margin-bottom: 0;
     padding: 2rem;
 }
+
+h3 {
+    color: red;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#Fortune {
+    padding-top: 2rem;
+    display: none
+}
+
+.omikuji{
+    margin: 1rem auto;
+    display: flex;
+    width: 50%;
+
+}
+#cover {
+    width: 350px;
+    height: 730px;
+    background-image: url('../Photos/Omikuji.png');
+    border: 2px solid red;
+    margin: 1rem auto;
+}
+
+#kuji {
+    width: 350px;
+    height: 730px;
+    border: 2px solid red;
+    margin: 1rem auto;
+    display: none;
+    background-color: white;
+}
+
+
+
 /*>320px screens*/
 @media only screen and (min-width: 320px){
 

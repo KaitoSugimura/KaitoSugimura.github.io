@@ -50,7 +50,7 @@ html {
     background-position: center;
     background-size: cover;
     width: 100%;
-    height: 31rem;
+    height: 24rem;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -64,7 +64,7 @@ html {
     border-radius: 0.5rem;
     color: #0fb0f0;
     margin: 0 auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-family: 'Indie Flower', cursive;
 }
 
@@ -106,7 +106,7 @@ html {
 
 #borderButton {
     position: absolute;
-    top: 25rem;
+    top: 20rem;
     padding: 0.5rem;
     border-radius: 0.2rem;
     background-color: white;
@@ -156,10 +156,19 @@ footer h1 {
     html {
         font-size: 16px;
     }
+    #title {
+        font-size: 2rem;
+    }
 }
 
 /*>768px screens*/
 @media only screen and (min-width: 768px){
+    #banner {
+        height: 31rem;
+    }
+    #borderButton {
+        top: 25rem;
+    }
 }
 
 /*>1024px screens*/

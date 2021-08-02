@@ -13,19 +13,16 @@ function PhotoRotate () {
     if (PhotoIndex === 0) {
         bannerImg.style.backgroundImage = "url('Photos/KaitoCliff.jpg')";
         title.style.color = '#0fb0f0'
-        title.style.top = '4.2rem'
         title.innerHTML = 'Hello! My name is Kaito Sugimura, and Welcome to my website!'
     }
     else if (PhotoIndex === 1) {
         bannerImg.style.backgroundImage = "url('Photos/Karate.jpg')";
         title.style.color = '#000'
-        title.style.top = '4.2rem'
         title.innerHTML = 'Our Karate showdown at the Calgary Japanese Festival "Omatsuri"'
     }
     else if (PhotoIndex === 2) {
         bannerImg.style.backgroundImage = "url('Photos/KarateWin.jpg')";
         title.style.color = 'black'
-        title.style.top = '21rem'
         title.innerHTML = 'Me winning a Gold medal at Quebec City, Shotokan National Karate'
     }
 } 
