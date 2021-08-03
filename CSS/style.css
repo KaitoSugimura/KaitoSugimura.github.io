@@ -34,7 +34,7 @@ html {
 }
 
 .header li:hover {
-    border: solid 1px black;  
+    color: grey; 
 }
 
 .header li a {
