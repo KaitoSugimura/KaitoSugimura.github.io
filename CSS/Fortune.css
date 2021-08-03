@@ -1,7 +1,7 @@
 
 main {
     position: static;
-    font-family: Papyrus;
+    font-family: Papyrus, 'Dancing Script', cursive;;
     text-align: center;
     padding-bottom: 5.5rem;
 }
@@ -94,6 +94,31 @@ h3 {
     display: none;
 }
 
+.kuji h1 {
+    margin: 0.4em auto;
+    font-size: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50%;
+    color: black;
+}
+
+.kuji h2 {
+    margin: 0.75em auto;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.kuji h3 {
+    margin: 0.75em auto;
+    font-weight: bold;
+    font-size: 3em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.kuji p {
+    font-size: 1em;
+}
 
 
 /*>320px screens*/
