@@ -92,17 +92,59 @@
     margin: 0 auto;
 }
 
-.explaination {
+.WireFrame {
     width: 100%;
 }
 
-#wiring {
-    display: block;
+.WireFrame h2 {
+    margin-top: 0.4em;
+}
+
+.WireFrame hr {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1% auto;
+    width: 70%;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: red;
+}
+
+.wireframeImages {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.PNG {
+    width: 100%;
+}
+
+.PNG img{
+    vertical-align: text-top;
     margin: 0 auto;
+    width: 100%;
 }
 
+#img1 {
+    display: none;
+}
+#img2 {
+    display: none;
+}
+#img3 {
+    display: none;
+}
 
+.JScode {
+    overflow:scroll;
+    width: 80%;
+    height: 20em;
+}
+
+.JScode img{
+    width: 100%;
+
+}
 
 /*>1361px screens*/
 @media only screen and (min-width: 1361px) {

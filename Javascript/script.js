@@ -7,6 +7,12 @@ let title = document.getElementById('title')
 let BorderButton = document.getElementById('borderButton')
 let TipButton = document.getElementById('tipButton')
 let Tips = document.getElementById('tips')
+let img1 = document.getElementById('img1')
+let img2 = document.getElementById('img2')
+let img3 = document.getElementById('img3')
+let img1Button = document.getElementById('imgButton1')
+let img2Button = document.getElementById('imgButton2')
+let img3Button = document.getElementById('imgButton3')
 
 
 function PhotoRotate () {
@@ -67,12 +73,42 @@ function displayTips () {
     
 }
 
-function hideTips () {
-    Tips.style.display = 'none'
-    TipButton.innerHTML = 'Click here to read tips'
+function displayImage1 () {
+    if (img1Button.innerHTML == 'Display image') {
+        img1.style.display = 'block'
+        img1Button.innerHTML = 'Hide image'
+    } else {
+        img1.style.display = 'none'
+        img1Button.innerHTML = 'Display image'
+    }
+    
 }
+function displayImage2 () {
+    if (img2Button.innerHTML == 'Display image') {
+        img2.style.display = 'block'
+        img2Button.innerHTML = 'Hide image'
+    } else {
+        img2.style.display = 'none'
+        img2Button.innerHTML = 'Display image'
+    }
+    
+}
+function displayImage3 () {
+    if (img3Button.innerHTML == 'Display image') {
+        img3.style.display = 'block'
+        img3Button.innerHTML = 'Hide image'
+    } else {
+        img3.style.display = 'none'
+        img3Button.innerHTML = 'Display image'
+    }
+    
+}
+
 
 rightButton.addEventListener('click', rightButtonClick);
 leftButton.addEventListener('click', leftButtonClick);
 BorderButton.addEventListener('click', Border);
 TipButton.addEventListener('click', displayTips)
+img1Button.addEventListener('click', displayImage1)
+img2Button.addEventListener('click', displayImage2)
+img3Button.addEventListener('click', displayImage3)
