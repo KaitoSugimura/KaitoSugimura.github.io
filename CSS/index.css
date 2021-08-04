@@ -113,6 +113,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .PNG {
@@ -146,6 +147,12 @@
 
 }
 
+/*>1024px screens*/
+@media only screen and (min-width: 1024px){
+    .wireframeImages {
+        flex-wrap: initial;
+    }
+}
 /*>1361px screens*/
 @media only screen and (min-width: 1361px) {
     .intro {
@@ -168,4 +175,6 @@
     #wiring {
         width: 50%;
     }
+
+
 }
