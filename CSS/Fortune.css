@@ -120,6 +120,14 @@ h3 {
     font-size: 1em;
 }
 
+.tutorial h3 {
+    font-size: 2em;
+}
+
+.tutorial img {
+    width: 90%;
+    border: solid 2px black;
+}
 
 /*>320px screens*/
 @media only screen and (min-width: 320px){
@@ -137,8 +145,12 @@ h3 {
 
 }
 
-/*>768px screens*/
-@media only screen and (min-width: 768px){
+/*>920px screens*/
+@media only screen and (min-width: 920px){
+    .tutorial img {
+        width: auto;
+        border: solid 4px black;
+    }
 }
 
 /*>1024px screens*/
