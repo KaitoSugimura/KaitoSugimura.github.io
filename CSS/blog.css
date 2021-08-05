@@ -1,17 +1,27 @@
 /*blog*/
 
-main {
-    position: relative;
-    top: 4em; 
+
+body {
+    background-image: url("../Photos/BlogBackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
     width: 100%;
-    padding-bottom: 5.5em;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 6em;
 }
 
 .post {
     display: block;
     width: 90%;
     text-align: left;
-    margin: 1rem auto;
+    margin: 0rem auto 2.5rem auto;
     background-color: white;
     padding: 0.5rem;
     border-radius: 0.4rem;
@@ -65,23 +75,10 @@ main {
 
     .post {
         width: 50%;
-        margin: 1rem auto;
-        padding: 0.5rem;
     }
+
     
-    .post h2 {
-        font-size: 0.8rem;
-        padding-bottom: 0.2rem;
-    }
-    
-    .post .date {
-        font-size: 0.8rem;
-        padding-bottom: 0.5rem;
-    }
-    
-    .post p {
-        padding-bottom: 0.3rem;
-    }
+
 }
 
 /*>1440px screens*/
