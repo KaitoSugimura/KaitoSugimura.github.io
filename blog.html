@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="CSS/reset.css">
         <link rel="stylesheet" type="text/css" href="CSS/style.css"> 
         <link rel="stylesheet" type="text/css" href="CSS/blog.css"> 
-        <script src="Javascript/script.js" defer></script>
+        <script src="Javascript/blog.js" defer></script>
         <!-- google font Indie Flower-->  
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,17 @@
                 <li><a href=''>Other</a></li>
             </ul>
         </nav>
+        <!-- SETTING -->
+        <section class='settings'>
+            <h1>Settings</h1>
+            <hr>
+            <button class='SettingButton' id='InOrder'>Display Posts Newest first</button>
+            <button class='SettingButton' id='ReverseOrder'>Display Posts Oldest first</button>
+            <button class='SettingButton' id='Stared'>Display Stared posts</button>
+        </section>
+
         <!-- MAIN -->
-        <main>
+        <main id='main'>
             <article class = 'post'>
                 <h2>Kaito Sugimura</h2>
                 <h3 class='date'>August 3, 2021</h3>
@@ -37,7 +46,8 @@
                 <img src='Photos/PheonixAfternoon.jpg'>
             </article>
 
-            <article class = 'post'>
+            <article class='star' class='post'>
+                <img id='StarImage' src='./Photos/Star.png'>
                 <h2>Kaito Sugimura</h2>
                 <h3 class='date'>July 24, 2021</h3>
                 <p>Heres where my journey begins!</p>
@@ -61,6 +71,7 @@
                 <ul>
                     <li>Image by <a href="https://pixabay.com/users/copyrightfreepictures-203/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=736400" target="_blank">CopyrightFreePictures</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=736400" target="_blank">Pixabay</a></li>
                     <li>Sound from Zapsplat.com</li>
+                    <li>Photo by <a href="https://unsplash.com/@tianshu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Tianshu Liu</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Unsplash</a></li>
                 </ul>
                 
             </div>

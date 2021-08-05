@@ -2,22 +2,62 @@
 
 
 body {
+    position: relative;
     background-image: url("../Photos/BlogBackground.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     width: 100%;
-}
-
-main {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
     padding-top: 6em;
 }
 
-.post {
+.settings {
+    width: 90%;
+    margin: 0 auto 2.5em auto;
+    padding: 0.5em;
+    display: block;
+    background-color: rgb(133, 133, 133);
+    border-radius: 0.2em;
+
+}
+
+#InOrder {
+    background-color: lightblue;
+}
+
+.SettingButton {
+    width: 80%;
+    font-size: 1em;
+    margin: 0.5em 0;
+    background-color: white;
+}
+
+.settings h1 {
+    font-size: 1.2em;
+}
+
+main {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.post span,
+.star span {
+    position: relative;
+}
+
+#StarImage {
+    position: absolute;
+    right: 0;
+    top: 0.2em;
+    width: 4em;
+}
+
+.post, .star {
+    position: relative;
     display: block;
     width: 90%;
     text-align: left;
@@ -28,25 +68,29 @@ main {
 
 }
 
-.post h2 {
+
+.post h2, .star h2 {
     font-size: 0.8rem;
     padding-bottom: 0.2rem;
     font-weight: bold;
     font-family: Verdana;
 }
 
-.post .date {
+.post .date, 
+.star .date {
     font-size: 0.8rem;
     padding-bottom: 0.5rem;
     color: grey;
 }
 
-.post p {
+.post p,
+.star p {
     padding-bottom: 0.3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.post img {
+.post img,
+.star img {
     width: 100%
 }
 
@@ -73,11 +117,13 @@ main {
 /*>1024px screens*/
 @media only screen and (min-width: 1024px){
 
-    .post {
+    .post, .star {
         width: 50%;
     }
 
-    
+    .settings {
+        width: 50%;
+    }
 
 }
 

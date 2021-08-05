@@ -296,8 +296,7 @@ footer .contacts {
     /* FOOTER */
     footer {
         display: flex;
-        position: relative;
-        bottom: 0;
+        position: block;
         width: 100%;
         height: auto;
         background-color: #051a3f;
