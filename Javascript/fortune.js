@@ -52,6 +52,7 @@ const NumberOpen = new Audio('Audio/NumberOpen.mp3')
 let buttonSection = document.getElementById('Button')
 let FateButton = document.getElementById('buttonOfFate')
 let Fortune = document.getElementById('Fortune')
+let HowtoPlay = document.getElementById('HowtoPlay')
 //Fortune 1
 let cover1 = document.getElementById('cover1')
 let kuji1 = document.getElementById('kuji1')
@@ -65,6 +66,7 @@ let kuji3 = document.getElementById('kuji3')
 /* EVENT FUNCTIONS */
 function buttonPress () {
     mystery.play()
+    HowtoPlay.style.display = 'none'
     Fortune.style.display = 'block'
     buttonSection.style.display = 'none'
 }
