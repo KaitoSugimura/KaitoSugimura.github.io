@@ -90,7 +90,9 @@ main {
 }
 
 .post img,
-.star img {
+.star img,
+.post video,
+.star video {
     width: 100%
 }
 
