@@ -92,7 +92,9 @@ main {
 .post img,
 .star img,
 .post video,
-.star video {
+.star video,
+.post iframe,
+.star iframe {
     width: 100%
 }
 
