@@ -1,0 +1,24 @@
+/************************************************/
+/* ACCOUNT FOR NO HOVER (Tablets) */
+/************************************************/
+@media (hover: none) {
+
+}
+
+/************************************************/
+/* DEVICE SIZE */
+/************************************************/
+
+/* 1344 px */
+@media (max-width: 84em) {
+  html {
+    font-size: 56%; /* 1 rem = 10px on normal settings */
+  }
+}
+
+/* 1184 px */
+@media (max-width: 74em) {
+  html {
+    font-size: 56%; /* 1 rem = 10px on normal settings */
+  }
+}
