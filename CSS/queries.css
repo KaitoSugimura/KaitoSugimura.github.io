@@ -1,9 +1,15 @@
 /************************************************/
-/* ACCOUNT FOR NO HOVER (Tablets) */
+/* IF DEVICE CAN HOVER  */
 /************************************************/
-@media (hover: none) {
-
+@media (hover: hover) {
+  .YoutubeIconAppear .icon-container:hover {
+    padding-right: 6rem;
+    padding-bottom: 6rem;
+    transform: translate(0, 0);
+  }
 }
+/***** non hoverable devices account in js (Tablets) */
+
 
 /************************************************/
 /* DEVICE SIZE */

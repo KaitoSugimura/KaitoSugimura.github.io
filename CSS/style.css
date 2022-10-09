@@ -208,17 +208,20 @@ h1 {
   transform-origin: 0 12rem;
 }
 
-.sticky .icon-container {
+.YoutubeIconAppear .icon-container {
   opacity: 1;
 }
 
-.sticky .icon-container:hover {
+/* Hover aspect in queries.css */
+
+/* FOR NON HOVERABLE DEVICES : see js for implementation */
+.YoutubeIconClicked .icon-container {
   padding-right: 6rem;
   padding-bottom: 6rem;
   transform: translate(0, 0);
 }
 
-.sticky .icon-container:hover .icon-text {
+.YoutubeIconAppear .icon-container:hover .icon-text {
   animation: rotateText 8s linear infinite;
 }
 
