@@ -1,4 +1,6 @@
-// STICKY NAV
+/************************************************/
+/* STICKY NAV  */
+/************************************************/
 const sectionHeroEl = document.querySelector(".section-hero");
 
 const obs = new IntersectionObserver(
@@ -14,7 +16,9 @@ const obs = new IntersectionObserver(
 );
 obs.observe(sectionHeroEl);
 
-//SCROLLING
+/************************************************/
+/* SCROLLING  */
+/************************************************/
 const scrollProgressEl = document.querySelector(".scroll-progress");
 
 document.addEventListener("scroll", function () {
@@ -34,18 +38,19 @@ document.addEventListener("scroll", function () {
     document.body.classList.remove("YoutubeIconAppear");
   }
 
-  /** Scroll timeline */
+  /** Set show-me class on timeline container */
   const timelineContainer = document.querySelectorAll(".timeline-container");
 
   timelineContainer.forEach((item) => {
     const rect = window.pageYOffset + item.getBoundingClientRect().top;
-    if ((rect + item.offsetHeight) < (distanceFromTop + windowHeight)) {
+    if (rect  < (distanceFromTop + windowHeight*0.8)) {
       item.classList.add("show-me");
     } else {
       item.classList.remove("show-me");
     }
   });
 
+  /** Scroll timeline-line */
   const timeline = document.querySelector(".timeline");
   const timelineLine = document.querySelector(".timeline-line");
   const TopHeightOfTimeline = window.pageYOffset + timeline.getBoundingClientRect().top - windowHeight/1.15;
@@ -62,7 +67,9 @@ document.addEventListener("scroll", function () {
 
 });
 
-// ICON CIRCULATE
+/************************************************/
+/* YOUTUBE ICON  */
+/************************************************/
 const text = document.querySelector(".icon-text p");
 text.innerHTML = text.innerText
   .split("")
@@ -71,7 +78,9 @@ text.innerHTML = text.innerText
   )
   .join("");
 
-// SMOOTH SCROLLING ANIMATION
+/************************************************/
+/* SMOOTH SCROLLING  */
+/************************************************/
 const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
