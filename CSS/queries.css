@@ -28,3 +28,9 @@
     font-size: 56%; /* 1 rem = 10px on normal settings */
   }
 }
+
+@media (max-width: 38rem){
+  .timeline{
+    
+  }
+}

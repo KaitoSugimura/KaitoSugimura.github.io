@@ -2,7 +2,13 @@
 /* Z INDEX */
 /***********************************************************/
 /*
-NAVIGATION BAR: 100
+-> CAN EFFECT GLOBALLY:
+Navigation bar: 100
+YouTube Icon: 99
+
+-> EXPERIENCE
+timeline-container: 10
+timeline-line: 1
 
 */
 
@@ -14,6 +20,10 @@ NAVIGATION BAR: 100
 #d0ebff
 #2192fc
 
+
+
+
+#17191a
 */
 /***********************************************************/
 /* Font sizes */
