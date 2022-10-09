@@ -1,0 +1,279 @@
+.temp {
+  height: 100vh;
+  font-size: 10rem;
+}
+
+/******************************/
+/* HERO SECTION */
+/******************************/
+
+.section-hero {
+  height: 100vh;
+  position: relative;
+  background-image: linear-gradient(
+      to left,
+      rgba(34, 34, 34, 0.1),
+      rgba(34, 34, 34, 0.65)
+    ),
+    url("../img/About/Cliff_2MB.jpg");
+  background-size: cover;
+  color: #fff;
+}
+
+.hero {
+  max-width: 120rem;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+}
+
+.h1-subheading-container {
+  margin-bottom: 2.8rem;
+  width: max-content;
+}
+
+.h1-subheading {
+  display: inline-block;
+  font-size: 3.6rem;
+  font-family: "Source Code Pro", monospace;
+  color: #eee;
+  line-height: 1.5;
+
+  overflow: hidden;
+  border-right: 0.2rem solid #333;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.2rem;
+  animation: typing 2s steps(13, end), blink-caret 0.75s step-end infinite;
+  animation-delay: 0s, 2s;
+}
+
+.h1-subheading:hover {
+  animation: none;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 2rem;
+}
+
+.hero-description {
+  font-size: 3rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-down-icon {
+  opacity: 0;
+  position: absolute;
+  bottom: 5%;
+  right: 8%;
+  width: 15rem;
+  height: 15rem;
+  color: #ddd;
+  animation: blink-icon 1.5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes blink-icon {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, -10%);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(0, 0%);
+  }
+}
+
+/******************************/
+/* NAVIGATION */
+/******************************/
+.main-nav {
+  background-color: #e7f5ff;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding-top: 1rem; /* So tab doesnt get cut off on the top*/
+}
+
+.main-nav-list {
+  display: grid;
+  height: 6.2rem;
+  list-style: none;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 1rem; /* So tab doesnt cover the bottom bar*/
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #2192fc;
+}
+
+.scroll-progress-container {
+  background-color: #d0ebff;
+}
+
+.scroll-progress {
+  background-color: #2192fc;
+  height: 0.5rem;
+}
+
+.sticky .main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.sticky main {
+  margin-top: 8.25rem;
+}
+
+/******************************/
+/* ICON */
+/******************************/
+
+.icon-container {
+  position: fixed;
+  transform: translate(20%, 20%);
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.icon-container a {
+  position: relative;
+  display: flex;
+  border-radius: 50%;
+  width: 24rem;
+  height: 24rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-img {
+  border-radius: 50%;
+  width: 19rem;
+  height: 19rem;
+}
+
+.icon-text {
+  position: absolute;
+  color: #000;
+  font-size: 1.6em;
+  font-family: "Source Code Pro", monospace;
+  width: 100%;
+  height: 100%;
+}
+
+.icon-text span {
+  position: absolute;
+  left: 50%;
+  transform-origin: 0 12rem;
+}
+
+.sticky .icon-container {
+  opacity: 1;
+}
+
+.sticky .icon-container:hover {
+  padding-right: 6rem;
+  padding-bottom: 6rem;
+  transform: translate(0, 0);
+}
+
+.sticky .icon-container:hover .icon-text {
+  animation: rotateText 8s linear infinite;
+}
+
+@keyframes rotateText {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+/******************************/
+/* ABOUT */
+/******************************/
+
+.section-about {
+  padding: 9.6rem 0 3.2rem 0;
+  color: #17191a;
+}
+
+/* Uses container */
+
+.about-quote {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+  display: block;
+}
+
+.about-quote q {
+  color: #171819;
+  font-size: 2.4rem;
+  line-height: 1.6;
+}
+
+.about-description {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.about-engineer {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+/******************************/
+/* EXPERIENCE */
+/******************************/
+
+/******************************/
+/* NAVIGATION */
+/******************************/
+
+
+
+/******************************/
+/* FOOTER */
+/******************************/
