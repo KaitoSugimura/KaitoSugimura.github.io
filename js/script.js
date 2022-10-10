@@ -103,7 +103,18 @@ function OnScrollTimeline() {
     }
   });
 
-  if (currentLoopSection !== "" && currentLoopSection !== "end" && currentLoopSection !== "start") {
+  const YouTubeCircleIconText = document.querySelector(".icon-text");
+  if (currentLoopSection !== "" && currentLoopSection !== "end") {
+    YouTubeCircleIconText.style.color = "#fff";
+  } else {
+    YouTubeCircleIconText.style.color = "#000";
+  }
+
+  if (
+    currentLoopSection !== "" &&
+    currentLoopSection !== "end" &&
+    currentLoopSection !== "start"
+  ) {
     timelineTagContent.classList.add("timeline-content-onScreen");
     timelineTagContent.innerHTML = currentLoopSection;
   } else {
@@ -149,7 +160,7 @@ function OnScrollTimeline() {
           GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
-      case "Self-Study/Hobby":
+      case "Hobby":
         mainFrontImage.style.backgroundImage =
           GRADIENT +
           "url('../img/timeline/Background/CoinDozerGameBackground.jpg')";
