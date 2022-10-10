@@ -273,24 +273,31 @@ h1 {
 /******************************/
 
 .section-experience {
-  background-color: #111;
+  color: #fff;
+  padding-top: 2.4rem;
+}
+
+.timeline-background-img {
+  z-index: -100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: linear-gradient(
-      rgba(34, 34, 34, 0.4), /* Remember to change GRADIENT const in js if this is changed */
-      rgba(34, 34, 34, 0.4)
-    ), 
+      rgba(34, 34, 34, 0.4),
+      /* Remember to change GRADIENT const in js if this is changed */
+        rgba(34, 34, 34, 0.4)
+    ),
     url("../img/timeline/Background/CJCSGrad.jpg");
 
-  background-attachment: fixed;
+
   background-position: center;
   -webkit-background-position: center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-
-  background-repeat: no-repeat;
-  color: #fff;
-  padding-top: 2.4rem;
 }
 
 .timeline-content-onScreen {
@@ -540,7 +547,7 @@ h1 {
   font-size: 1.6rem;
 }
 
-.timeline-content-img{
+.timeline-content-img {
   width: 100%;
 }
 /******************************/

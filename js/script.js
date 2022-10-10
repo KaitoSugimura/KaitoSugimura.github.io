@@ -91,7 +91,7 @@ function OnScrollTimeline() {
     }
   });
 
-  const timelineSectionEl = document.querySelector(".section-experience");
+  const timelineSectionEl = document.querySelector(".timeline-background-img");
   if (timelineTagContent.innerHTML === "") {
     timelineTagContent.classList.remove("timeline-content-onScreen");
   } else if(timelineTagContent.innerHTML === "Education"){
