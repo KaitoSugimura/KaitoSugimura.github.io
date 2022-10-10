@@ -1,6 +1,7 @@
 "use strict";
 
 const GRADIENT = 'linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),';
+const TIMELINEMIDPOINT = 0.8;
 
 /************************************************/
 /* STICKY NAV  */
@@ -53,7 +54,7 @@ function OnScrollTimeline() {
   const TopHeightOfTimeline =
     window.pageYOffset +
     timeline.getBoundingClientRect().top -
-    windowHeight * 0.8;
+    windowHeight * TIMELINEMIDPOINT;
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
   var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
   if (timelinePercent < 0.5) {
@@ -61,8 +62,8 @@ function OnScrollTimeline() {
     timeline.classList.remove("timeline-exists");
     mainBackgroundImage.style.backgroundImage = "url('../img/timeline/Background/White.jpg')";
     mainFrontImage.classList.add("img-swap");
-  } else if (timelinePercent > 90) {
-    timelinePercent = 90;
+  } else if (timelinePercent > 98) {
+    timelinePercent = 98;
   } else {
     mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
     mainFrontImage.classList.add("img-swap");
@@ -83,12 +84,14 @@ function OnScrollTimeline() {
       window.pageYOffset +
       item.children[0].getBoundingClientRect().top +
       item.children[0].height;
-    if (rect < distanceFromTop + windowHeight * 0.8) {
+    if (rect < distanceFromTop + windowHeight * TIMELINEMIDPOINT) {
       item.classList.remove("hide-me");
       item.classList.add("show-me");
       const Attribute = item.getAttribute("title");
-      if(timelinePercent >= 90){
-        timelineTagContent.innerHTML = "";
+      if(timelinePercent >= 98){
+        timelineTagContent.innerHTML = ""
+        mainBackgroundImage.style.backgroundImage = "url('../img/timeline/Background/white.jpg')";
+        mainFrontImage.classList.add("img-swap");
       }
       else if (Attribute) {
         timelineTagContent.innerHTML = Attribute;
@@ -120,7 +123,7 @@ function OnScrollTimeline() {
     mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
     mainFrontImage.classList.add("img-swap");
   } else if(timelineTagContent.innerHTML === "Self-Study/Hobby"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CoinDozerGameBackground.jpg')";
     mainFrontImage.classList.add("img-swap");
   } 
 }
