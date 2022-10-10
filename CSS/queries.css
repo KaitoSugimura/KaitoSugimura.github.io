@@ -14,7 +14,9 @@
 /* IOS  */
 /************************************************/
 @supports (-webkit-touch-callout: none) {
- 
+  .section-experience {
+    background-size: auto;
+  }
 }
 
 /************************************************/
