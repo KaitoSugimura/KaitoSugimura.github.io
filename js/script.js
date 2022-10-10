@@ -1,3 +1,5 @@
+const GRADIENT = 'linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),';
+
 /************************************************/
 /* STICKY NAV  */
 /************************************************/
@@ -89,9 +91,20 @@ function OnScrollTimeline() {
     }
   });
 
+  const timelineSectionEl = document.querySelector(".section-experience");
   if (timelineTagContent.innerHTML === "") {
     timelineTagContent.classList.remove("timeline-content-onScreen");
-  }
+  } else if(timelineTagContent.innerHTML === "Education"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
+  } else if(timelineTagContent.innerHTML === "Karate"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
+  } else if(timelineTagContent.innerHTML === "Nationals"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
+  } else if(timelineTagContent.innerHTML === "Work Experience"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
+  } else if(timelineTagContent.innerHTML === "Volunteering"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+  } 
 }
 
 /************************************************/
