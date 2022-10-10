@@ -21,7 +21,9 @@ obs.observe(sectionHeroEl);
 /************************************************/
 const scrollProgressEl = document.querySelector(".scroll-progress");
 
-document.addEventListener("scroll", function () {
+document.addEventListener("scroll", OnScrollTimeline);
+
+function OnScrollTimeline() {
   const totalHeightOfPage = document.body.scrollHeight; // Total page page height
   const distanceFromTop = document.documentElement.scrollTop; // Current height from the top
   const windowHeight = document.documentElement.clientHeight; // Height of the window
@@ -43,7 +45,7 @@ document.addEventListener("scroll", function () {
 
   timelineContainer.forEach((item) => {
     const rect = window.pageYOffset + item.getBoundingClientRect().top;
-    if (rect  < (distanceFromTop + windowHeight*0.8)) {
+    if (rect  <= (distanceFromTop + windowHeight*0.8)) {
       item.classList.add("show-me");
     } else {
       item.classList.remove("show-me");
@@ -57,15 +59,21 @@ document.addEventListener("scroll", function () {
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
   var timelinePercent = CurrentPlaceOnTimeline/timeline.offsetHeight * 100;
 
-  if(timelinePercent < 0.5){
+  const timelineTagContent = document.querySelector(".timeline-section-tag-content");
+  if(timelinePercent < 1.3){
     timelinePercent = 0;
+    timeline.classList.remove("timeline-exists");
+    timelineTagContent.innerHTML = "";
   } else if (timelinePercent > 90){
     timelinePercent = 90;
+  } else {
+    timeline.classList.add("timeline-exists");
+    timelineTagContent.innerHTML = "Education";
   }
 
   timelineLine.style.height = timelinePercent + "%";
 
-});
+}
 
 /************************************************/
 /* YOUTUBE ICON  */
@@ -114,4 +122,21 @@ document.addEventListener("click", function (e) {
   if (!e.target.closest(".icon-container")) {
     document.body.classList.remove("YoutubeIconClicked");
   }
+});
+
+
+/************************************************/
+/* SHOW MORE  */
+/************************************************/
+const CoursesShowMore = document.querySelector(".courses-taken-show-more");
+const CoursesShowMoreButton = document.querySelector(".courses-taken-show-more-button");
+
+CoursesShowMoreButton.addEventListener("click", function(){
+  if(CoursesShowMore.style.display === "none"){
+    CoursesShowMore.style.display = "block";
+  } else {
+    CoursesShowMore.style.display = "none";
+  }
+
+  OnScrollTimeline(); // Update timeline
 });
