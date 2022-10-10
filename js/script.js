@@ -1,6 +1,7 @@
 "use strict";
 
-const GRADIENT = 'linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),';
+const GRADIENT =
+  "linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),";
 const TIMELINEMIDPOINT = 0.8;
 
 /************************************************/
@@ -28,6 +29,7 @@ const scrollProgressEl = document.querySelector(".scroll-progress");
 const mainBackgroundImage = document.querySelector(".main-background-img");
 const mainFrontImage = document.querySelector(".main-front-img");
 const bIsTimeline = false;
+var previousLoopSection = "";
 
 document.addEventListener("scroll", OnScrollTimeline);
 
@@ -58,80 +60,121 @@ function OnScrollTimeline() {
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
   var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
   if (timelinePercent < 0.5) {
-    timelinePercent = 0;
-    timeline.classList.remove("timeline-exists");
-    mainBackgroundImage.style.backgroundImage = "url('../img/timeline/Background/White.jpg')";
-    mainFrontImage.classList.add("img-swap");
+    timelinePercent = 0.5;
   } else if (timelinePercent > 98) {
     timelinePercent = 98;
   } else {
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
-    mainFrontImage.classList.add("img-swap");
     timeline.classList.add("timeline-exists");
   }
 
   timelineLine.style.height = timelinePercent + "%";
 
   /** Set show-me class on timeline container */
-  const timelineContainer = document.querySelectorAll(".timeline-container");
+  const AllTimelineSections = document.querySelectorAll(
+    ".timeline-section-division, .timeline-container"
+  );
   const timelineTagContent = document.querySelector(
     ".timeline-section-tag-content"
   );
-  timelineTagContent.innerHTML = "";
 
-  timelineContainer.forEach((item) => {
-    const rect =
-      window.pageYOffset +
-      item.children[0].getBoundingClientRect().top +
-      item.children[0].height;
-    if (rect < distanceFromTop + windowHeight * TIMELINEMIDPOINT) {
-      item.classList.remove("hide-me");
-      item.classList.add("show-me");
-      const Attribute = item.getAttribute("title");
-      if(timelinePercent >= 98){
-        timelineTagContent.innerHTML = ""
-        mainBackgroundImage.style.backgroundImage = "url('../img/timeline/Background/white.jpg')";
-        mainFrontImage.classList.add("img-swap");
-      }
-      else if (Attribute) {
-        timelineTagContent.innerHTML = Attribute;
-        timelineTagContent.classList.add("timeline-content-onScreen");
+  var currentLoopSection = "";
+
+  AllTimelineSections.forEach((item) => {
+    if (item.classList.contains("timeline-container")) {
+      const rect =
+        window.pageYOffset +
+        item.children[0].getBoundingClientRect().top +
+        item.children[0].height;
+      if (rect < distanceFromTop + windowHeight * TIMELINEMIDPOINT) {
+        item.classList.remove("hide-me");
+        item.classList.add("show-me");
+        if(item.classList.contains("timeline-section-division")){
+          currentLoopSection = item.getAttribute("title");
+        }
+      } else {
+        item.classList.remove("show-me");
+        item.classList.add("hide-me");
       }
     } else {
-      item.classList.remove("show-me");
-      item.classList.add("hide-me");
+      const rect = window.pageYOffset + item.getBoundingClientRect().top;
+      if (rect < distanceFromTop + windowHeight * TIMELINEMIDPOINT) {
+        currentLoopSection = item.getAttribute("title");
+      }
     }
+
   });
 
-  if (timelineTagContent.innerHTML === "") {
-    timelineTagContent.classList.remove("timeline-content-onScreen");
-  } 
-  else if(timelineTagContent.innerHTML === "Education"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } 
-  else if(timelineTagContent.innerHTML === "Karate"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateDojo.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } else if(timelineTagContent.innerHTML === "Nationals"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } else if(timelineTagContent.innerHTML === "Work Experience"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } else if(timelineTagContent.innerHTML === "Volunteering"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } else if(timelineTagContent.innerHTML === "Self-Study/Hobby"){
-    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CoinDozerGameBackground.jpg')";
-    mainFrontImage.classList.add("img-swap");
-  } 
+  if (
+    currentLoopSection !== "" &&
+    currentLoopSection !== "start" &&
+    currentLoopSection !== "end"
+  ) {
+    timelineTagContent.classList.add("timeline-content-onScreen");
+  }
+
+  if (currentLoopSection !== previousLoopSection) {
+    switch (currentLoopSection) {
+      case "":
+        timelineTagContent.innerHTML = "";
+        mainFrontImage.style.backgroundImage =
+          "url('../img/timeline/Background/white.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "start":
+        timelineTagContent.innerHTML = "";
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Education":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Karate":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/KarateDojo.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Nationals":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Work Experience":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Volunteering":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Self-Study/Hobby":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT +
+          "url('../img/timeline/Background/CoinDozerGameBackground.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "end":
+        timelineTagContent.innerHTML = "";
+        mainFrontImage.style.backgroundImage =
+          "url('../img/timeline/Background/white.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+    }
+  }
+
+
+  previousLoopSection = currentLoopSection;
 }
 
 mainFrontImage.addEventListener("animationend", () => {
-  mainFrontImage.style.backgroundImage = mainBackgroundImage.style.backgroundImage;
-  mainFrontImage.classList.remove("img-swap");
-})
+  mainBackgroundImage.style.backgroundImage =
+    mainFrontImage.style.backgroundImage;
+  mainFrontImage.classList.remove("img-load");
+});
 
 /************************************************/
 /* YOUTUBE ICON  */
@@ -199,6 +242,3 @@ CoursesShowMoreButton.addEventListener("click", function () {
 
   OnScrollTimeline(); // Update timeline
 });
-
-
-
