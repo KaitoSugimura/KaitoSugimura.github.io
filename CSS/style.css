@@ -276,6 +276,9 @@ h1 {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-color: #111;
   background-image: linear-gradient(
       rgba(34, 34, 34, 0.4), /* Remember to change GRADIENT const in js if this is changed */
@@ -422,7 +425,7 @@ h1 {
   }
 }
 
-.timeline-container img {
+.timeline-logo-img {
   position: absolute;
   width: 4rem;
   height: 4rem;
@@ -535,6 +538,9 @@ h1 {
   font-size: 1.6rem;
 }
 
+.timeline-content-img{
+  width: 100%;
+}
 /******************************/
 /* NAVIGATION */
 /******************************/

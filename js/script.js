@@ -104,6 +104,8 @@ function OnScrollTimeline() {
     timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
   } else if(timelineTagContent.innerHTML === "Volunteering"){
     timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+  } else if(timelineTagContent.innerHTML === "Self-Study/Hobby"){
+    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
   } 
 }
 
