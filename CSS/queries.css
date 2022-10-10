@@ -15,7 +15,7 @@
 /************************************************/
 @supports (-webkit-touch-callout: none) {
   .section-experience {
-    background-attachment: scroll;
+    background-size: 100%;
   }
 }
 
