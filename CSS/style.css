@@ -277,29 +277,6 @@ h1 {
   padding-top: 2.4rem;
 }
 
-.timeline-background-img {
-  z-index: -100;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: linear-gradient(
-      rgba(34, 34, 34, 0.4),
-      /* Remember to change GRADIENT const in js if this is changed */
-        rgba(34, 34, 34, 0.4)
-    ),
-    url("../img/timeline/Background/CJCSGrad.jpg");
-
-
-  background-position: center;
-  -webkit-background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-}
-
 .timeline-content-onScreen {
   animation: movedown-left 0.5s linear forwards;
 }

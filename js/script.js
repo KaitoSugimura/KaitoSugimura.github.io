@@ -1,3 +1,5 @@
+"use strict";
+
 const GRADIENT = 'linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),';
 
 /************************************************/
@@ -22,6 +24,9 @@ obs.observe(sectionHeroEl);
 /* SCROLLING  */
 /************************************************/
 const scrollProgressEl = document.querySelector(".scroll-progress");
+const mainBackgroundImage = document.querySelector(".main-background-img");
+const mainFrontImage = document.querySelector(".main-front-img");
+const bIsTimeline = false;
 
 document.addEventListener("scroll", OnScrollTimeline);
 
@@ -51,12 +56,16 @@ function OnScrollTimeline() {
     windowHeight * 0.8;
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
   var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
-  if (timelinePercent < 1.3) {
+  if (timelinePercent < 0.5) {
     timelinePercent = 0;
     timeline.classList.remove("timeline-exists");
+    mainBackgroundImage.style.backgroundImage = "url('../img/timeline/Background/White.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } else if (timelinePercent > 90) {
     timelinePercent = 90;
   } else {
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
+    mainFrontImage.classList.add("img-swap");
     timeline.classList.add("timeline-exists");
   }
 
@@ -91,23 +100,35 @@ function OnScrollTimeline() {
     }
   });
 
-  const timelineSectionEl = document.querySelector(".timeline-background-img");
   if (timelineTagContent.innerHTML === "") {
     timelineTagContent.classList.remove("timeline-content-onScreen");
-  } else if(timelineTagContent.innerHTML === "Education"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
-  } else if(timelineTagContent.innerHTML === "Karate"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
+  } 
+  else if(timelineTagContent.innerHTML === "Education"){
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
+    mainFrontImage.classList.add("img-swap");
+  } 
+  else if(timelineTagContent.innerHTML === "Karate"){
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateDojo.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } else if(timelineTagContent.innerHTML === "Nationals"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } else if(timelineTagContent.innerHTML === "Work Experience"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } else if(timelineTagContent.innerHTML === "Volunteering"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } else if(timelineTagContent.innerHTML === "Self-Study/Hobby"){
-    timelineSectionEl.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+    mainBackgroundImage.style.backgroundImage = GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+    mainFrontImage.classList.add("img-swap");
   } 
 }
+
+mainFrontImage.addEventListener("animationend", () => {
+  mainFrontImage.style.backgroundImage = mainBackgroundImage.style.backgroundImage;
+  mainFrontImage.classList.remove("img-swap");
+})
 
 /************************************************/
 /* YOUTUBE ICON  */
@@ -175,3 +196,6 @@ CoursesShowMoreButton.addEventListener("click", function () {
 
   OnScrollTimeline(); // Update timeline
 });
+
+
+

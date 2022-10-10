@@ -23,6 +23,56 @@ body {
   overflow-x: hidden;
 }
 
+.main-front-img,
+.main-background-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+
+  background-position: center;
+  -webkit-background-position: center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  /*
+    background-image: linear-gradient(
+      rgba(34, 34, 34, 0.4),
+      Remember to change GRADIENT const in js if this is changed
+      rgba(34, 34, 34, 0.4)
+      ),
+      url("../img/timeline/Background/CJCSGrad.jpg");
+  */
+}
+
+.main-front-img{
+  z-index: -99;
+}
+
+.main-front-img.img-swap{
+  animation: fadeout 0.4s linear forwards;
+}
+
+@keyframes fadeout {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.main-background-img{
+  z-index: -100;
+}
+
 .heading-secondary,
 .heading-tertiary {
   color: #333;
@@ -49,5 +99,5 @@ body {
 }
 
 .margin-bottom-large{
-  margin-bottom: 40.6rem;
+  margin-bottom: 25rem;
 }
