@@ -281,7 +281,11 @@ h1 {
     url("../img/timeline/Background/CJCSGrad.jpg");
 
   background-attachment: fixed;
+  -webkit-background-attachment: fixed;
+  -moz-background-attachment: fixed;
+  -o-background-attachment: fixed;
   background-position: center;
+  -webkit-background-position: center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
