@@ -276,7 +276,7 @@ h1 {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  background-color: #444;
+  background-color: #111;
   background-image: linear-gradient(
       rgba(34, 34, 34, 0.4), /* Remember to change GRADIENT const in js if this is changed */
       rgba(34, 34, 34, 0.4)
