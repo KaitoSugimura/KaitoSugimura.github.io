@@ -10,6 +10,14 @@
 }
 /***** non hoverable devices account in js (Tablets) */
 
+/************************************************/
+/* IOS  */
+/************************************************/
+@supports (-webkit-touch-callout: none) {
+  .section-experience {
+    background-attachment: scroll;
+  }
+}
 
 /************************************************/
 /* DEVICE SIZE */
@@ -29,8 +37,7 @@
   }
 }
 
-@media (max-width: 38rem){
-  .timeline{
-    
+@media (max-width: 38rem) {
+  .timeline {
   }
 }
