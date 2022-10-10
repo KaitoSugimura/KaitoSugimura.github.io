@@ -40,39 +40,58 @@ function OnScrollTimeline() {
     document.body.classList.remove("YoutubeIconAppear");
   }
 
-  /** Set show-me class on timeline container */
-  const timelineContainer = document.querySelectorAll(".timeline-container");
-
-  timelineContainer.forEach((item) => {
-    const rect = window.pageYOffset + item.getBoundingClientRect().top;
-    if (rect  <= (distanceFromTop + windowHeight*0.8)) {
-      item.classList.add("show-me");
-    } else {
-      item.classList.remove("show-me");
-    }
-  });
-
   /** Scroll timeline-line */
   const timeline = document.querySelector(".timeline");
   const timelineLine = document.querySelector(".timeline-line");
-  const TopHeightOfTimeline = window.pageYOffset + timeline.getBoundingClientRect().top - windowHeight/1.15;
+  const TopHeightOfTimeline =
+    window.pageYOffset +
+    timeline.getBoundingClientRect().top -
+    windowHeight * 0.8;
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
-  var timelinePercent = CurrentPlaceOnTimeline/timeline.offsetHeight * 100;
-
-  const timelineTagContent = document.querySelector(".timeline-section-tag-content");
-  if(timelinePercent < 1.3){
+  var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
+  if (timelinePercent < 1.3) {
     timelinePercent = 0;
     timeline.classList.remove("timeline-exists");
-    timelineTagContent.innerHTML = "";
-  } else if (timelinePercent > 90){
+  } else if (timelinePercent > 90) {
     timelinePercent = 90;
   } else {
     timeline.classList.add("timeline-exists");
-    timelineTagContent.innerHTML = "Education";
   }
 
   timelineLine.style.height = timelinePercent + "%";
 
+  /** Set show-me class on timeline container */
+  const timelineContainer = document.querySelectorAll(".timeline-container");
+  const timelineTagContent = document.querySelector(
+    ".timeline-section-tag-content"
+  );
+  timelineTagContent.innerHTML = "";
+
+  timelineContainer.forEach((item) => {
+    const rect =
+      window.pageYOffset +
+      item.children[0].getBoundingClientRect().top +
+      item.children[0].height;
+    if (rect < distanceFromTop + windowHeight * 0.8) {
+      item.classList.remove("hide-me");
+      item.classList.add("show-me");
+      const Attribute = item.getAttribute("title");
+      if(timelinePercent >= 90){
+        timelineTagContent.innerHTML = "";
+      }
+      else if (Attribute) {
+        timelineTagContent.innerHTML = Attribute;
+        timelineTagContent.classList.add("timeline-content-onScreen");
+      }
+    } else {
+      item.classList.remove("show-me");
+      item.classList.add("hide-me");
+    }
+  });
+
+  if (timelineTagContent.innerHTML === "") {
+    timelineTagContent.classList.remove("timeline-content-onScreen");
+  }
 }
 
 /************************************************/
@@ -107,7 +126,7 @@ allLinks.forEach(function (link) {
       e.preventDefault();
       document.querySelector(href).scrollIntoView({ behavior: "smooth" });
     } else if (name === "YoutubeLinkIcon" && !canHover) {
-    /* FOR YOUTUBE ICON ON NON HOVERABLE DEVICES */
+      /* FOR YOUTUBE ICON ON NON HOVERABLE DEVICES */
       if (!document.body.classList.contains("YoutubeIconClicked")) {
         e.preventDefault();
         document.body.classList.add("YoutubeIconClicked");
@@ -124,15 +143,16 @@ document.addEventListener("click", function (e) {
   }
 });
 
-
 /************************************************/
 /* SHOW MORE  */
 /************************************************/
 const CoursesShowMore = document.querySelector(".courses-taken-show-more");
-const CoursesShowMoreButton = document.querySelector(".courses-taken-show-more-button");
+const CoursesShowMoreButton = document.querySelector(
+  ".courses-taken-show-more-button"
+);
 
-CoursesShowMoreButton.addEventListener("click", function(){
-  if(CoursesShowMore.style.display === "none"){
+CoursesShowMoreButton.addEventListener("click", function () {
+  if (CoursesShowMore.style.display === "none") {
     CoursesShowMore.style.display = "block";
   } else {
     CoursesShowMore.style.display = "none";

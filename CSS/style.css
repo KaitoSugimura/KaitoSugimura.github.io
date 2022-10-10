@@ -275,9 +275,22 @@ h1 {
 .section-experience {
   background-color: #0369a1;
   background-image: linear-gradient(315deg, #0369a1 0%, #0c444e 100%);
+  color: #fff;
+  padding-top: 2.4rem;
 }
 
-.timeline-section-tag{
+.timeline-content-onScreen {
+  animation: movedown-left 0.5s linear forwards;
+}
+
+.timeline-main-heading {
+  font-size: 4.8rem;
+  margin: 9.6rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-section-tag {
   position: fixed;
   top: 9.6rem;
   left: 1rem;
@@ -294,6 +307,7 @@ h1 {
   margin: 9.6rem auto;
   padding-top: 50vh;
   padding-bottom: 50rem;
+  color: #171819;
 }
 
 .timeline-line {
@@ -309,7 +323,7 @@ h1 {
 }
 
 .timeline-line::before,
-.timeline-exists .timeline-line span{
+.timeline-exists .timeline-line span {
   position: absolute;
   display: block;
   content: "";
@@ -319,32 +333,39 @@ h1 {
   transform: translateX(-50%);
 }
 
-.timeline-line::before{
+.timeline-line::before {
   height: 5rem;
   width: 5rem;
 }
 
-.timeline-line span{
+.timeline-line span {
   bottom: 0rem;
   height: 4rem;
   width: 4rem;
 }
 
-
 .timeline-container {
   padding: 1rem 5rem;
   position: relative;
   width: 50%;
-  opacity: 0;
   z-index: 10;
   margin: 9.6rem 0;
+  opacity: 0;
 }
 
-.timeline .show-me:nth-child(odd){
+.timeline .hide-me:nth-child(odd) {
+  animation: moveout-left 0.5s linear backwards;
+}
+
+.timeline .hide-me:nth-child(even) {
+  animation: moveout-right 0.5s linear backwards;
+}
+
+.timeline .show-me:nth-child(odd) {
   animation: movedown-left 0.5s linear forwards;
 }
 
-.timeline .show-me:nth-child(even){
+.timeline .show-me:nth-child(even) {
   animation: movedown-right 0.5s linear forwards;
 }
 
@@ -367,6 +388,28 @@ h1 {
   100% {
     opacity: 1;
     transform: translate(0rem, 0rem);
+  }
+}
+
+@keyframes moveout-left {
+  0% {
+    opacity: 1;
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-2rem, -3rem);
+  }
+}
+
+@keyframes moveout-right {
+  0% {
+    opacity: 1;
+    transform: translate(0rem, 0rem);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(2rem, -3rem);
   }
 }
 
@@ -423,7 +466,7 @@ h1 {
 .timeline-textbox h2,
 .timeline-textbox h3,
 .timeline-textbox h4,
-.timeline-textbox h5{
+.timeline-textbox h5 {
   font-weight: 600;
   color: #17191a;
   line-height: 1.2;
@@ -460,21 +503,21 @@ h1 {
   line-height: 1.5;
 }
 
-.timeline-textbox ul{
+.timeline-textbox ul {
   margin-left: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.timeline-textbox ul:last-child{
+.timeline-textbox ul:last-child {
   margin-bottom: 0rem;
 }
 
-.timeline-textbox li{
+.timeline-textbox li {
   font-size: 1.4rem;
   line-height: 1.5;
 }
 
-.courses-taken-list{
+.courses-taken-list {
   margin-left: 1rem;
 }
 
@@ -482,7 +525,6 @@ h1 {
   margin-top: 1rem;
   font-size: 1.6rem;
 }
-
 
 /******************************/
 /* NAVIGATION */
