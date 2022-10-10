@@ -88,7 +88,7 @@ function OnScrollTimeline() {
       if (rect < distanceFromTop + windowHeight * TIMELINEMIDPOINT) {
         item.classList.remove("hide-me");
         item.classList.add("show-me");
-        if(item.classList.contains("timeline-section-division")){
+        if (item.classList.contains("timeline-section-division")) {
           currentLoopSection = item.getAttribute("title");
         }
       } else {
@@ -101,15 +101,13 @@ function OnScrollTimeline() {
         currentLoopSection = item.getAttribute("title");
       }
     }
-
   });
 
-  if (
-    currentLoopSection !== "" &&
-    currentLoopSection !== "start" &&
-    currentLoopSection !== "end"
-  ) {
+  if (currentLoopSection !== "" && currentLoopSection !== "end" && currentLoopSection !== "start") {
     timelineTagContent.classList.add("timeline-content-onScreen");
+    timelineTagContent.innerHTML = currentLoopSection;
+  } else {
+    timelineTagContent.classList.remove("timeline-content-onScreen");
   }
 
   if (currentLoopSection !== previousLoopSection) {
@@ -165,7 +163,6 @@ function OnScrollTimeline() {
         break;
     }
   }
-
 
   previousLoopSection = currentLoopSection;
 }
