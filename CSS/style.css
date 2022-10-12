@@ -192,6 +192,7 @@ h1 {
   border-radius: 50%;
   width: 19rem;
   height: 19rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 
 .icon-text {
@@ -293,7 +294,7 @@ h1 {
   top: 9.6rem;
   left: 1rem;
   font-size: 6.4rem;
-  z-index: 20;
+  z-index: -1;
   opacity: 0.9;
   color: white;
   text-shadow: 0rem 0rem 1rem #fff;
@@ -318,6 +319,7 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  box-shadow: 0 1rem 1.5rem rgba(200, 200, 200, 0.4);
 }
 
 .timeline-line::before,
@@ -329,6 +331,7 @@ h1 {
   background-color: white;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0 1rem -1.5rem rgba(200, 200, 200, 0.4);
 }
 
 .timeline-line::before {
@@ -418,6 +421,7 @@ h1 {
   border-radius: 50%;
   right: -2rem;
   top: 3.2rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 .timeline-textbox {
@@ -425,6 +429,7 @@ h1 {
   background-color: #fff;
   position: relative;
   border-radius: 0.6rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 
 .timeline-container:nth-child(odd) {
@@ -492,8 +497,11 @@ h1 {
 .timeline-textbox small {
   display: inline-block;
   margin-top: 1rem;
-  margin-bottom: 1.75rem;
   font-size: 1.4rem;
+}
+
+.timeline-content-date{
+  margin-bottom: 1.8rem;
 }
 
 .timeline-textbox p {
@@ -524,14 +532,33 @@ h1 {
   font-size: 1.6rem;
 }
 
+.timeline-textbox iframe,
 .timeline-content-img {
   width: 100%;
+  height: auto;
 }
 
 .timeline-buffer-content{
   width: 1rem;
   height: 30rem;
 }
+
+.timeline-container-ptag{
+  position:absolute;
+  top: 1%;
+  background-color: yellow;
+  font-size: 2.4rem;
+  padding: 1rem 1.5rem;
+}
+
+.timeline-container:nth-child(even) .timeline-container-ptag{
+  right: -8%;
+}
+
+.timeline-container:nth-child(odd) .timeline-container-ptag{
+  left: -8%;
+}
+
 /******************************/
 /* NAVIGATION */
 /******************************/

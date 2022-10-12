@@ -1,7 +1,7 @@
 "use strict";
 
 const GRADIENT =
-  "linear-gradient(rgba(34, 34, 34, 0.4),rgba(34, 34, 34, 0.4)),";
+  "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.2)),";
 const TIMELINEMIDPOINT = 0.8;
 
 /************************************************/
@@ -150,14 +150,14 @@ function OnScrollTimeline() {
           GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
-      case "Work Experience":
-        mainFrontImage.style.backgroundImage =
-          GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
-        mainFrontImage.classList.add("img-load");
-        break;
       case "Volunteering":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Work Experience":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "Hobby":
