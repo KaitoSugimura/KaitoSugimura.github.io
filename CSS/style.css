@@ -1,6 +1,7 @@
 .temp {
   height: 100vh;
-  font-size: 10rem;
+  font-size: 6rem;
+  line-height: 1.2;
 }
 
 /******************************/
@@ -174,6 +175,7 @@ h1 {
   transform: translate(20%, 20%);
   bottom: 0;
   right: 0;
+  pointer-events: none;
   opacity: 0;
   transition: all 0.4s;
 }
@@ -212,6 +214,7 @@ h1 {
 
 .YoutubeIconAppear .icon-container {
   opacity: 1;
+  pointer-events: all;
 }
 
 /* Hover aspect in queries.css */
@@ -584,6 +587,8 @@ h1 {
 .python-basics-img{
   padding-top: 1rem;
   width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 
 /******************************/

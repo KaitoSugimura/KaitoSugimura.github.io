@@ -163,7 +163,7 @@ function OnScrollTimeline() {
       case "Hobby":
         mainFrontImage.style.backgroundImage =
           GRADIENT +
-          "url('../img/timeline/Background/CoinDozerGameBackground.jpg')";
+          "url('../img/timeline/Background/CoinDozerGameMainScreen.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "end":
