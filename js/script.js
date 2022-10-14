@@ -124,13 +124,11 @@ function OnScrollTimeline() {
   if (currentLoopSection !== previousLoopSection) {
     switch (currentLoopSection) {
       case "":
-        timelineTagContent.innerHTML = "";
         mainFrontImage.style.backgroundImage =
         "linear-gradient(rgba(34, 34, 34, 0),rgba(34, 34, 34, 0)), url('../img/timeline/Background/white.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "start":
-        timelineTagContent.innerHTML = "";
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
         mainFrontImage.classList.add("img-load");
@@ -167,9 +165,8 @@ function OnScrollTimeline() {
         mainFrontImage.classList.add("img-load");
         break;
       case "end":
-        timelineTagContent.innerHTML = "";
         mainFrontImage.style.backgroundImage =
-          "url('../img/timeline/Background/white.jpg')";
+          GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
     }
