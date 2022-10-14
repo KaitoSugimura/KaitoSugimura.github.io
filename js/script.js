@@ -125,7 +125,7 @@ function OnScrollTimeline() {
     switch (currentLoopSection) {
       case "":
         mainFrontImage.style.backgroundImage =
-        "linear-gradient(rgba(34, 34, 34, 0),rgba(34, 34, 34, 0)), url('../img/timeline/Background/white.jpg')";
+        "url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "start":
@@ -166,9 +166,9 @@ function OnScrollTimeline() {
         break;
       case "end":
         mainFrontImage.style.backgroundImage =
-          GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
+        "url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
-        break;
+        break
     }
   }
 
