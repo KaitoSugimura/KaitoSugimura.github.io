@@ -281,7 +281,8 @@ h1 {
   padding-top: 2.4rem;
 }
 
-.timeline-content-onScreen {
+.timeline-section-tag-content.timeline-content-onScreen {
+  display: block;
   animation: movedown-left 0.5s linear forwards;
 }
 
@@ -292,7 +293,7 @@ h1 {
   justify-content: center;
 }
 
-.timeline-section-tag {
+.timeline-section-tag-content {
   position: fixed;
   top: 9.6rem;
   left: 1rem;
@@ -301,6 +302,7 @@ h1 {
   opacity: 0.9;
   color: white;
   text-shadow: 0rem 0rem 1rem #fff;
+  display: none;
 }
 
 .timeline {
