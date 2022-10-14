@@ -126,7 +126,7 @@ function OnScrollTimeline() {
       case "":
         timelineTagContent.innerHTML = "";
         mainFrontImage.style.backgroundImage =
-          "url('../img/timeline/Background/white.jpg')";
+        "linear-gradient(rgba(34, 34, 34, 0),rgba(34, 34, 34, 0)), url('../img/timeline/Background/white.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "start":
