@@ -309,7 +309,6 @@ h1 {
   max-width: 120rem;
   margin: 9.6rem auto 0rem auto;
   padding-top: 50vh;
-  padding-bottom: 40vh;
   color: #171819;
 }
 
@@ -590,6 +589,15 @@ h1 {
   width: 50%;
   margin-left: 50%;
   transform: translateX(-50%);
+}
+
+.timeline-empty-container{
+  opacity: 0;
+  padding: 30vh;
+}
+
+.timeline-empty-container-end{
+  opacity: 0;
 }
 
 /******************************/

@@ -187,12 +187,12 @@ function OnScrollTimeline() {
 
   if(contactPercent <0.1) contactPercent = 0;
 
-  if(contactPercent <= 10){
-    BGFill.style.height = Math.max(contactPercent/5, 0.2) + "%";
+  if(contactPercent <= 50){
+    BGFill.style.height = Math.min(contactPercent/20, 1.5) + "%";
   } else{
-    BGFill.style.height = Math.min((contactPercent-8)*1.1, 100) + "%";
+    BGFill.style.height = Math.min((contactPercent-48)*1.8, 100) + "%";
   }
-  BGFill.style.width = Math.min(contactPercent*10, 100) + "%";
+  BGFill.style.width = Math.min(contactPercent*2, 100) + "%";
 }
 
 mainFrontImage.addEventListener("animationend", () => {
