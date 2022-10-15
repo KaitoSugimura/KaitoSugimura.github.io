@@ -183,16 +183,19 @@ function OnScrollTimeline() {
     contact.getBoundingClientRect().top -
     windowHeight * TIMELINEMIDPOINT;
   const CurrentPlaceOnContact = distanceFromTop - TopOfContact;
-  var contactPercent = (CurrentPlaceOnContact / contact.offsetHeight) * 150;
+  var contactPercent = (CurrentPlaceOnContact / contact.offsetHeight) * 130;
 
-  if(contactPercent <0.1) contactPercent = 0;
-
-  if(contactPercent <= 50){
-    BGFill.style.height = Math.min(contactPercent/20, 1.5) + "%";
-  } else{
-    BGFill.style.height = Math.min((contactPercent-48)*1.8, 100) + "%";
+  if(contactPercent < 0.2){
+    BGFill.style.height =  BGFill.style.width = 0;
+  }else{
+    if(contactPercent <= 50){
+      BGFill.style.height = Math.min(contactPercent/20, 1.5) + "%";
+    } else{
+      BGFill.style.height = Math.min((contactPercent-48)*1.8, 100) + "%";
+    }
+    BGFill.style.width = Math.min(contactPercent*2, 100) + "%";
   }
-  BGFill.style.width = Math.min(contactPercent*2, 100) + "%";
+
 }
 
 mainFrontImage.addEventListener("animationend", () => {

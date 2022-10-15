@@ -616,6 +616,7 @@ h1 {
 
 .contact-container {
   max-width: 125rem;
+  height: 64rem;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -629,7 +630,7 @@ h1 {
   border-radius: 1rem;
   position: absolute;
   width: 100%;
-  height: 64rem;
+  height: 100%;
   padding: 0;
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.5);
   display: flex;
@@ -657,7 +658,6 @@ h1 {
   width: 98.5%;
   height: 62rem;
   margin-top: 1rem;
-  margin-bottom: 4.8rem;
   position: relative;
 
   display: flex;
@@ -669,7 +669,6 @@ h1 {
 }
 
 .contact-box:hover {
-  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
       to top left,
       rgba(0, 27, 72, 0.48),
@@ -705,10 +704,17 @@ h1 {
   transform: scale(103%);
 }
 
+
+/******************************/
+/* FOOTER */
+/******************************/
+
 .contact-SS {
   font-size: 4.8rem;
   display: flex;
   gap: 2.4rem;
+  justify-content: center;
+  margin-top: 4.8rem;
 }
 
 .contact-SS-link:link,
@@ -716,13 +722,9 @@ h1 {
   color: #2a2b2d;
 }
 
-/******************************/
-/* FOOTER */
-/******************************/
-
 .footer-text{
   font-size: 2.4rem;
-  margin: 1.2rem auto;
+  margin: 2.4rem auto 4.8rem auto;
   display: flex;
   justify-content: center;
   text-align: center;
