@@ -3,6 +3,7 @@
 const GRADIENT =
   "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.2)),";
 const TIMELINEMIDPOINT = 0.8;
+const TIMELINEENDPERCENT = 100;
 
 /************************************************/
 /* STICKY NAV  */
@@ -61,8 +62,8 @@ function OnScrollTimeline() {
   var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
   if (timelinePercent < 0.5) {
     timelinePercent = 0.5;
-  } else if (timelinePercent > 98) {
-    timelinePercent = 98;
+  } else if (timelinePercent > TIMELINEENDPERCENT) {
+    timelinePercent = TIMELINEENDPERCENT;
   } else {
     timeline.classList.add("timeline-exists");
   }
@@ -166,13 +167,32 @@ function OnScrollTimeline() {
         break;
       case "end":
         mainFrontImage.style.backgroundImage =
-        "url('../img/timeline/Background/White.jpg')";
+        "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.8)), url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
         break
     }
   }
 
   previousLoopSection = currentLoopSection;
+
+  /** Scroll timeline-line */
+  const contact = document.querySelector(".section-contact");
+  const BGFill = document.querySelector(".background-border-color");
+  const TopOfContact =
+    window.pageYOffset +
+    contact.getBoundingClientRect().top -
+    windowHeight * TIMELINEMIDPOINT;
+  const CurrentPlaceOnContact = distanceFromTop - TopOfContact;
+  var contactPercent = (CurrentPlaceOnContact / contact.offsetHeight) * 150;
+
+  if(contactPercent <0.1) contactPercent = 0;
+
+  if(contactPercent <= 10){
+    BGFill.style.height = Math.max(contactPercent/5, 0.2) + "%";
+  } else{
+    BGFill.style.height = Math.min((contactPercent-10)*1.1, 100) + "%";
+  }
+  BGFill.style.width = Math.min(contactPercent*10, 100) + "%";
 }
 
 mainFrontImage.addEventListener("animationend", () => {
