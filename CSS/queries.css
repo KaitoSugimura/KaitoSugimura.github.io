@@ -14,7 +14,6 @@
 /* IOS  */
 /************************************************/
 @supports (-webkit-touch-callout: none) {
-
 }
 
 /************************************************/
@@ -24,18 +23,54 @@
 /* 1344 px */
 @media (max-width: 84em) {
   html {
-    font-size: 56%; /* 1 rem = 10px on normal settings */
+    font-size: 56%;
   }
 }
 
 /* 1184 px */
 @media (max-width: 74em) {
   html {
-    font-size: 56%; /* 1 rem = 10px on normal settings */
+    font-size: 56%;
   }
 }
 
-@media (max-width: 38rem) {
-  .timeline {
+@media (max-width: 40rem) {
+  html {
+    font-size: 40%;
   }
+
+  .timeline-line {
+    left: 7%;
+  }
+
+  .timeline .hide-me:nth-child(odd) {
+    animation: moveout-right 0.5s linear backwards;
+  }
+  .timeline .show-me:nth-child(odd) {
+    animation: movedown-right 0.5s linear forwards;
+  }
+
+  .timeline-container:nth-child(odd),
+  .timeline-container:nth-child(even) {
+    left: 7%;
+  }
+
+  .timeline-container:nth-child(odd) span {
+    border-left: none;
+    border-right: 1.5rem solid #fff;
+    left: -1.5rem;
+  }
+
+  .timeline-container:nth-child(odd) img {
+    left: -2rem;
+  }
+
+  .timeline-container {
+    width: 100%;
+  }
+
+  body{
+    width: 100vw;
+  }
+
 }
