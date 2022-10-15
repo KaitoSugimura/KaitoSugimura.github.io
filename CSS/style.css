@@ -561,6 +561,10 @@ h1 {
   gap: 0.2rem;
 }
 
+.timeline-container:nth-child(odd) .timeline-container-tags {
+  left: 2rem;
+}
+
 .timeline-container-tags a:link,
 .timeline-container-tags a:visited {
   display: inline-block;
