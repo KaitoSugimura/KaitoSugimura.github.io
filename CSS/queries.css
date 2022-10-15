@@ -91,6 +91,11 @@
     }
   }
 
+  .timeline-container-tags,
+  .timeline-container:nth-child(odd) .timeline-container-tags{
+    left: 7rem;
+  }
+
   .timeline-container:nth-child(odd),
   .timeline-container:nth-child(even) {
     padding-left: 5rem;
