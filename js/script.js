@@ -30,7 +30,7 @@ const scrollProgressEl = document.querySelector(".scroll-progress");
 const mainBackgroundImage = document.querySelector(".main-background-img");
 const mainFrontImage = document.querySelector(".main-front-img");
 const bIsTimeline = false;
-var previousLoopSection = "";
+var previousLoopSection = "SomeState";
 
 document.addEventListener("scroll", OnScrollTimeline);
 
@@ -60,8 +60,8 @@ function OnScrollTimeline() {
     windowHeight * TIMELINEMIDPOINT;
   const CurrentPlaceOnTimeline = distanceFromTop - TopHeightOfTimeline;
   var timelinePercent = (CurrentPlaceOnTimeline / timeline.offsetHeight) * 100;
-  if (timelinePercent < 0.5) {
-    timelinePercent = 0.5;
+  if (timelinePercent < 0.35) {
+    timelinePercent = 0.35;
   } else if (timelinePercent > TIMELINEENDPERCENT) {
     timelinePercent = TIMELINEENDPERCENT;
   } else {
@@ -167,7 +167,7 @@ function OnScrollTimeline() {
         break;
       case "end":
         mainFrontImage.style.backgroundImage =
-        "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.8)), url('../img/timeline/Background/White.jpg')";
+        "linear-gradient(rgba(0, 15, 42, 0.8),rgba(0, 15, 42, 0.2)), url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
         break
     }
@@ -190,7 +190,7 @@ function OnScrollTimeline() {
   if(contactPercent <= 10){
     BGFill.style.height = Math.max(contactPercent/5, 0.2) + "%";
   } else{
-    BGFill.style.height = Math.min((contactPercent-10)*1.1, 100) + "%";
+    BGFill.style.height = Math.min((contactPercent-8)*1.1, 100) + "%";
   }
   BGFill.style.width = Math.min(contactPercent*10, 100) + "%";
 }

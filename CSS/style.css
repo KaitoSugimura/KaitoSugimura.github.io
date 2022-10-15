@@ -505,7 +505,7 @@ h1 {
   font-size: 1.4rem;
 }
 
-.timeline-content-date{
+.timeline-content-date {
   margin-bottom: 1.8rem;
 }
 
@@ -543,16 +543,16 @@ h1 {
   height: auto;
 }
 
-.timeline-buffer-content{
+.timeline-buffer-content {
   width: 1rem;
   height: 30rem;
 }
 
-.timeline-container-tags{
-  position:absolute;
+.timeline-container-tags {
+  position: absolute;
   top: -3.5rem;
   left: 7rem;
-  font-size: 2.0rem;  
+  font-size: 2rem;
   font-weight: 400;
   z-index: -1;
   padding: 0.7rem 0rem 1.8rem 0rem;
@@ -573,20 +573,20 @@ h1 {
   transform: translateY(-10%);
 }
 
-.timeline-container-tags a{
+.timeline-container-tags a {
   border-radius: 1.5rem;
   padding: 1rem 2rem 3rem 2rem;
 }
 
-.timeline-container-ptag{
+.timeline-container-ptag {
   background-color: #ffec99;
 }
 
-.timeline-container-gjtag{
+.timeline-container-gjtag {
   background-color: #d0bfff;
 }
 
-.python-basics-img{
+.python-basics-img {
   padding-top: 1rem;
   width: 50%;
   margin-left: 50%;
@@ -596,17 +596,15 @@ h1 {
 /******************************/
 /* PROJECTS */
 /******************************/
-.section-project{
+.section-project {
   padding-top: 30vh;
 }
-
-
 
 /******************************/
 /* CONTACT */
 /******************************/
 
-.contact-container{
+.contact-container {
   max-width: 125rem;
   margin: 0 auto;
   position: relative;
@@ -615,7 +613,7 @@ h1 {
   align-items: center;
 }
 
-.background-border{
+.background-border {
   top: 0;
   left: 0;
   border-radius: 1rem;
@@ -628,29 +626,28 @@ h1 {
   justify-content: center;
 }
 
-.background-border-color{
+.background-border-color {
   border-radius: 1rem;
   background-color: white;
   width: 100%;
   height: 100%;
-  position: absolute
-
+  position: absolute;
 }
 
-.contact-box{
+.contact-box {
   background-image: linear-gradient(
-    to top left,
-    rgba(0, 27, 72, 0.5),
-    rgba(0, 27, 72, 0.9)
-  ),
-  url("../img/About/Cliff_2MB.jpg");
+      to top left,
+      rgba(0, 27, 72, 0.5),
+      rgba(0, 27, 72, 0.9)
+    ),
+    url("../img/About/Cliff_2MB.jpg");
   background-size: cover;
   border-radius: 1rem;
   color: #fff;
   width: 98.5%;
   height: 62rem;
   margin-top: 1rem;
-  margin-bottom: 9.6rem;
+  margin-bottom: 4.8rem;
   position: relative;
 
   display: flex;
@@ -661,43 +658,63 @@ h1 {
   transition: all 0.3s;
 }
 
-.contact-box:hover{
+.contact-box:hover {
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
   background-image: linear-gradient(
-    to top left,
-    rgba(0, 27, 72, 0.48),
-    rgba(0, 27, 72, 0.88)
-  ),
-  url("../img/About/Cliff_2MB.jpg");
+      to top left,
+      rgba(0, 27, 72, 0.48),
+      rgba(0, 27, 72, 0.88)
+    ),
+    url("../img/About/Cliff_2MB.jpg");
   transform: scale(99%);
 }
 
-.contact-heading{
+.contact-heading {
   font-size: 9.6rem;
 }
 
-.contact-email-button{
+.contact-email-button {
   display: flex;
-  width: 52rem;
+  width: 48rem;
   align-items: center;
   justify-content: center;
   font-weight: 600;
 
-  padding: 3rem;
-  font-size: 4.8rem;
+  padding: 2.6rem;
+  font-size: 4.2rem;
   font-family: inherit;
   color: rgba(37, 50, 64, 1);
   text-decoration: none;
   border: none;
-  background-color:  #fff;
+  background-color: #fff;
   border-radius: 0.9rem;
   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
-.contact-email-button:hover{
+.contact-email-button:hover {
   transform: scale(103%);
 }
 
-.contact-SS{
+.contact-SS {
+  font-size: 4.8rem;
+  display: flex;
+  gap: 2.4rem;
+}
 
+.contact-SS-link:link,
+.contact-SS-link:visited{
+  color: #2a2b2d;
+}
+
+/******************************/
+/* FOOTER */
+/******************************/
+
+.footer-text{
+  font-size: 2.4rem;
+  margin: 1.2rem auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
 }
