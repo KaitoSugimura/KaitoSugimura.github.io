@@ -141,7 +141,7 @@ function OnScrollTimeline() {
         break;
       case "Karate":
         mainFrontImage.style.backgroundImage =
-          GRADIENT + "url('../img/timeline/Background/KarateDojo.jpg')";
+          GRADIENT + "url('../img/timeline/Background/KarateDojoGroupPhoto.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "Nationals":

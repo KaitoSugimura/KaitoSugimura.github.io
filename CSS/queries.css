@@ -39,6 +39,7 @@
 
 }
 
+/* 912 px */
 @media (max-width: 57em) {
   html {
     font-size: 54%;
@@ -120,6 +121,7 @@
 /* MOBILE SIZE */
 /**************************************/
 
+/* 640 px */
 @media (max-width: 40rem) {
   html {
     font-size: 40%;
