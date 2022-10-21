@@ -29,6 +29,7 @@ obs.observe(sectionHeroEl);
 const scrollProgressEl = document.querySelector(".scroll-progress");
 const mainBackgroundImage = document.querySelector(".main-background-img");
 const mainFrontImage = document.querySelector(".main-front-img");
+const aboutSectionEl = document.querySelector(".section-about");
 const bIsTimeline = false;
 var previousLoopSection = "SomeState";
 
@@ -128,11 +129,13 @@ function OnScrollTimeline() {
         mainFrontImage.style.backgroundImage =
         "url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
+        aboutSectionEl.classList.remove("fade-out");
         break;
       case "start":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
         mainFrontImage.classList.add("img-load");
+        aboutSectionEl.classList.add("fade-out");
         break;
       case "Education":
         mainFrontImage.style.backgroundImage =

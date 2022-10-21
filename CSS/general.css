@@ -65,6 +65,20 @@ body {
   }
 }
 
+.section-about.fade-out{
+  animation: fadeout 0.1s linear forwards;
+}
+
+@keyframes fadeout {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
 .main-background-img{
   z-index: -100;
 }
@@ -94,7 +108,7 @@ body {
 }
 
 .margin-bottom-large{
-  margin-bottom: 25rem;
+  margin-bottom: 5rem;
 }
 
 .flex-spacebetween{
