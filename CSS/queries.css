@@ -37,6 +37,10 @@
     width: 95%;
   }
 
+  .contact-container {
+    max-width: 100rem;
+  }
+
 }
 
 /* 912 px */
@@ -52,6 +56,18 @@
     top: 50%;
     left: 0%;
     transform: translate(0, -50%);
+  }
+
+  .about-quote {
+    font-size: 2.4rem;
+  }
+  
+  .about-quote q {
+    font-size: 3.6rem;
+  }
+
+  .heading-secondary{
+    font-size: 4rem;
   }
 
   .timeline-container{
