@@ -246,16 +246,33 @@ h1 {
 
 /* Uses container */
 
+.about-head-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.6rem;
+  margin-bottom: 3.6rem;
+}
+
+.about-picture{
+  width: 16rem;
+  border-radius: 50%;
+  border: 0.1rem solid #333;
+  margin-bottom: 2.4rem;
+}
+
 .about-quote {
-  font-size: 1.8rem;
+  font-size: 2.8rem;
   line-height: 1.6;
   margin-bottom: 2.4rem;
   display: block;
+  text-align: center;
 }
 
 .about-quote q {
   color: #171819;
-  font-size: 2.4rem;
+  font-size: 4.2rem;
   line-height: 1.6;
 }
 
