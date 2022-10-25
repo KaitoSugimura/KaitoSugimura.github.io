@@ -109,12 +109,12 @@ function OnScrollTimeline() {
     YouTubeCircleIconText.style.color = "#000";
   }
 
-  const timelineTagContent = document.querySelector(".section-experience");
+  const sectionExperienceEl = document.querySelector(".section-experience");
 
   if (currentLoopSection == "") {
-    timelineTagContent.classList.remove("timeline-content-onScreen");
+    sectionExperienceEl.classList.remove("timeline-content-onScreen");
   } else {
-    timelineTagContent.classList.add("timeline-content-onScreen");
+    sectionExperienceEl.classList.add("timeline-content-onScreen");
   }
 
   if (currentLoopSection !== previousLoopSection) {
