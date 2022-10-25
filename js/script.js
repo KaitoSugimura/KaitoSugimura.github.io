@@ -75,9 +75,6 @@ function OnScrollTimeline() {
   const AllTimelineSections = document.querySelectorAll(
     ".timeline-section-division, .timeline-container"
   );
-  const timelineTagContent = document.querySelector(
-    ".timeline-section-tag-content"
-  );
 
   var currentLoopSection = "";
 
@@ -112,22 +109,19 @@ function OnScrollTimeline() {
     YouTubeCircleIconText.style.color = "#000";
   }
 
-  if (
-    currentLoopSection !== "" &&
-    currentLoopSection !== "end" &&
-    currentLoopSection !== "start"
-  ) {
-    timelineTagContent.classList.add("timeline-content-onScreen");
-    timelineTagContent.innerHTML = currentLoopSection;
-  } else {
+  const timelineTagContent = document.querySelector(".section-experience");
+
+  if (currentLoopSection == "") {
     timelineTagContent.classList.remove("timeline-content-onScreen");
+  } else {
+    timelineTagContent.classList.add("timeline-content-onScreen");
   }
 
   if (currentLoopSection !== previousLoopSection) {
     switch (currentLoopSection) {
       case "":
         mainFrontImage.style.backgroundImage =
-        "url('../img/timeline/Background/White.jpg')";
+          "url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
         aboutSectionEl.classList.remove("fade-out");
         break;
@@ -144,12 +138,18 @@ function OnScrollTimeline() {
         break;
       case "Karate":
         mainFrontImage.style.backgroundImage =
-          GRADIENT + "url('../img/timeline/Background/KarateDojoGroupPhoto.jpg')";
+          GRADIENT +
+          "url('../img/timeline/Background/KarateDojoGroupPhoto.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "Nationals":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
+      case "Omatsuri":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/Omatsuri.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
       case "Volunteering":
@@ -170,9 +170,9 @@ function OnScrollTimeline() {
         break;
       case "end":
         mainFrontImage.style.backgroundImage =
-        "linear-gradient(rgba(0, 15, 42, 0.8),rgba(0, 15, 42, 0.2)), url('../img/timeline/Background/White.jpg')";
+          "linear-gradient(rgba(0, 15, 42, 0.8),rgba(0, 15, 42, 0.2)), url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
-        break
+        break;
     }
   }
 
@@ -188,17 +188,16 @@ function OnScrollTimeline() {
   const CurrentPlaceOnContact = distanceFromTop - TopOfContact;
   var contactPercent = (CurrentPlaceOnContact / contact.offsetHeight) * 130;
 
-  if(contactPercent < 0.2){
-    BGFill.style.height =  BGFill.style.width = 0;
-  }else{
-    if(contactPercent <= 50){
-      BGFill.style.height = Math.min(contactPercent/20, 1.5) + "%";
-    } else{
-      BGFill.style.height = Math.min((contactPercent-48)*1.8, 100) + "%";
+  if (contactPercent < 0.2) {
+    BGFill.style.height = BGFill.style.width = 0;
+  } else {
+    if (contactPercent <= 50) {
+      BGFill.style.height = Math.min(contactPercent / 20, 1.5) + "%";
+    } else {
+      BGFill.style.height = Math.min((contactPercent - 48) * 1.8, 100) + "%";
     }
-    BGFill.style.width = Math.min(contactPercent*2, 100) + "%";
+    BGFill.style.width = Math.min(contactPercent * 2, 100) + "%";
   }
-
 }
 
 mainFrontImage.addEventListener("animationend", () => {

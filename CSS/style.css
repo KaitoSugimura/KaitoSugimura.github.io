@@ -299,7 +299,7 @@ h1 {
   padding-top: 2.4rem;
 }
 
-.timeline-section-tag-content.timeline-content-onScreen {
+.timeline-content-onScreen .timeline-section-tag-content {
   display: block;
   animation: movedown-left 0.5s linear forwards;
 }
@@ -309,6 +309,10 @@ h1 {
   margin: 9.6rem auto;
   display: flex;
   justify-content: center;
+}
+
+.timeline-content-onScreen .timeline-main-heading{
+  text-shadow: 0.25rem 0.25rem 2rem #171819;
 }
 
 .timeline-section-tag-content {
