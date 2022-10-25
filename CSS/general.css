@@ -53,7 +53,7 @@ body {
 }
 
 .main-front-img.img-load{
-  animation: fadein 0.4s linear forwards;
+  animation: fadein 0.2s linear forwards;
 }
 
 @keyframes fadein {
