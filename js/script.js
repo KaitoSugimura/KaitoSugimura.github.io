@@ -162,6 +162,11 @@ function OnScrollTimeline() {
           GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
         mainFrontImage.classList.add("img-load");
         break;
+      case "UofC":
+        mainFrontImage.style.backgroundImage =
+          GRADIENT + "url('../img/timeline/Background/UniversityofCalgary.jpg')";
+        mainFrontImage.classList.add("img-load");
+        break;
       case "Hobby":
         mainFrontImage.style.backgroundImage =
           GRADIENT +
@@ -258,17 +263,22 @@ document.addEventListener("click", function (e) {
 /************************************************/
 /* SHOW MORE  */
 /************************************************/
-const CoursesShowMore = document.querySelector(".courses-taken-show-more");
-const CoursesShowMoreButton = document.querySelector(
-  ".courses-taken-show-more-button"
+const ShowMoreButton = document.querySelectorAll(
+  ".show-more-button"
 );
 
-CoursesShowMoreButton.addEventListener("click", function () {
-  if (CoursesShowMore.style.display === "none") {
-    CoursesShowMore.style.display = "block";
-  } else {
-    CoursesShowMore.style.display = "none";
-  }
-
-  OnScrollTimeline(); // Update timeline
+ShowMoreButton.forEach(function(item) {
+  item.addEventListener("click", function () {
+    const ShowMore = document.querySelector("." + item.getAttribute("title"));
+    if (ShowMore.style.display === "none") {
+      ShowMore.style.display = "block";
+      item.innerHTML = "Show less"
+    } else {
+      ShowMore.style.display = "none";
+      item.innerHTML = "Show more"
+    }
+  
+    OnScrollTimeline(); // Update timeline
+  });
 });
+

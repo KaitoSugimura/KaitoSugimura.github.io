@@ -542,9 +542,9 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.timeline-textbox ul:last-child {
+/* .timeline-textbox ul:last-child {
   margin-bottom: 0rem;
-}
+} */
 
 .timeline-textbox li {
   font-size: 1.4rem;
@@ -553,11 +553,6 @@ h1 {
 
 .courses-taken-list {
   margin-left: 1rem;
-}
-
-.show-more-button {
-  margin-top: 1rem;
-  font-size: 1.6rem;
 }
 
 .timeline-textbox iframe,

@@ -116,3 +116,10 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.show-more-button {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  padding: 0.2rem 0.8rem;
+}
