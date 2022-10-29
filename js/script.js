@@ -6,24 +6,6 @@ const TIMELINEMIDPOINT = 0.8;
 const TIMELINEENDPERCENT = 100;
 
 /************************************************/
-/* STICKY NAV  */
-/************************************************/
-const sectionHeroEl = document.querySelector(".section-hero");
-
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    if (!ent.isIntersecting) {
-      document.body.classList.add("sticky");
-    } else {
-      document.body.classList.remove("sticky");
-    }
-  },
-  { root: null, threshold: 0 }
-);
-obs.observe(sectionHeroEl);
-
-/************************************************/
 /* SCROLLING  */
 /************************************************/
 const scrollProgressEl = document.querySelector(".scroll-progress");
@@ -45,12 +27,12 @@ function OnScrollTimeline() {
   // Update scroll progress bar
   scrollProgressEl.style.width = Math.round(percent) + "%";
 
-  /* Make Youtube Icon appear when 400 distance away from top */
-  if (distanceFromTop > 400) {
-    document.body.classList.add("YoutubeIconAppear");
-  } else {
-    document.body.classList.remove("YoutubeIconAppear");
-  }
+  // /* Make Youtube Icon appear when 400 distance away from top */
+  // if (distanceFromTop > 400) {
+  //   document.body.classList.add("YoutubeIconAppear");
+  // } else {
+  //   document.body.classList.remove("YoutubeIconAppear");
+  // }
 
   /** Scroll timeline-line */
   const timeline = document.querySelector(".timeline");
@@ -102,12 +84,12 @@ function OnScrollTimeline() {
     }
   });
 
-  const YouTubeCircleIconText = document.querySelector(".icon-text");
-  if (currentLoopSection !== "" && currentLoopSection !== "end") {
-    YouTubeCircleIconText.style.color = "#fff";
-  } else {
-    YouTubeCircleIconText.style.color = "#000";
-  }
+  // const YouTubeCircleIconText = document.querySelector(".icon-text");
+  // if (currentLoopSection !== "" && currentLoopSection !== "end") {
+  //   YouTubeCircleIconText.style.color = "#fff";
+  // } else {
+  //   YouTubeCircleIconText.style.color = "#000";
+  // }
 
   const sectionExperienceEl = document.querySelector(".section-experience");
 
@@ -124,59 +106,64 @@ function OnScrollTimeline() {
           "url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
         aboutSectionEl.classList.remove("fade-out");
+        setGameBarVisibility(false);
+        ChangeNavigationToIcons(false);
         break;
       case "start":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/KarateShowdown.jpg')";
-        mainFrontImage.classList.add("img-load");
         aboutSectionEl.classList.add("fade-out");
+        repeatedCodeinCase();
         break;
       case "Education":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "Karate":
         mainFrontImage.style.backgroundImage =
           GRADIENT +
           "url('../img/timeline/Background/KarateDojoGroupPhoto.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "Nationals":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/KarateWin.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "Omatsuri":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/Omatsuri.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "Volunteering":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/Volunteer.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "Work Experience":
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/Soldering.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "UofC":
         mainFrontImage.style.backgroundImage =
-          GRADIENT + "url('../img/timeline/Background/UniversityofCalgary.jpg')";
-        mainFrontImage.classList.add("img-load");
+          GRADIENT +
+          "url('../img/timeline/Background/UniversityofCalgary.jpg')";
+        repeatedCodeinCase();
         break;
       case "Hobby":
         mainFrontImage.style.backgroundImage =
           GRADIENT +
           "url('../img/timeline/Background/CoinDozerGameMainScreen.jpg')";
-        mainFrontImage.classList.add("img-load");
+        repeatedCodeinCase();
         break;
       case "end":
         mainFrontImage.style.backgroundImage =
           "linear-gradient(rgba(0, 15, 42, 0.8),rgba(0, 15, 42, 0.2)), url('../img/timeline/Background/White.jpg')";
         mainFrontImage.classList.add("img-load");
+        setGameBarVisibility(false);
+        ChangeNavigationToIcons(false);
         break;
     }
   }
@@ -211,74 +198,47 @@ mainFrontImage.addEventListener("animationend", () => {
   mainFrontImage.classList.remove("img-load");
 });
 
+function repeatedCodeinCase() {
+  mainFrontImage.classList.add("img-load");
+  setGameBarVisibility(true);
+  ChangeNavigationToIcons(true);
+}
+
 /************************************************/
 /* YOUTUBE ICON  */
 /************************************************/
-const text = document.querySelector(".icon-text p");
-text.innerHTML = text.innerText
-  .split("")
-  .map(
-    (char, i) => `<span style="transform:rotate(${i * 7}deg)">${char}</span>`
-  )
-  .join("");
+// const text = document.querySelector(".icon-text p");
+// text.innerHTML = text.innerText
+//   .split("")
+//   .map(
+//     (char, i) => `<span style="transform:rotate(${i * 7}deg)">${char}</span>`
+//   )
+//   .join("");
 
-/************************************************/
-/* SMOOTH SCROLLING  */
-/************************************************/
-const allLinks = document.querySelectorAll("a:link");
-
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    const href = link.getAttribute("href");
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    const name = link.getAttribute("name");
-
-    if (href === "#") {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    } else if (href.startsWith("#")) {
-      e.preventDefault();
-      document.querySelector(href).scrollIntoView({ behavior: "smooth" });
-    } else if (name === "YoutubeLinkIcon" && !canHover) {
-      /* FOR YOUTUBE ICON ON NON HOVERABLE DEVICES */
-      if (!document.body.classList.contains("YoutubeIconClicked")) {
-        e.preventDefault();
-        document.body.classList.add("YoutubeIconClicked");
-      }
-    }
-  });
-});
-
-/* Remove YoutubeIconClicked class for non hover devices 
-    when clicked on somewhere else on page */
-document.addEventListener("click", function (e) {
-  if (!e.target.closest(".icon-container")) {
-    document.body.classList.remove("YoutubeIconClicked");
-  }
-});
+// /* Remove YoutubeIconClicked class for non hover devices
+//     when clicked on somewhere else on page */
+// document.addEventListener("click", function (e) {
+//   if (!e.target.closest(".icon-container")) {
+//     document.body.classList.remove("YoutubeIconClicked");
+//   }
+// });
 
 /************************************************/
 /* SHOW MORE  */
 /************************************************/
-const ShowMoreButton = document.querySelectorAll(
-  ".show-more-button"
-);
+const ShowMoreButton = document.querySelectorAll(".show-more-button");
 
-ShowMoreButton.forEach(function(item) {
+ShowMoreButton.forEach(function (item) {
   item.addEventListener("click", function () {
     const ShowMore = document.querySelector("." + item.getAttribute("title"));
     if (ShowMore.style.display === "none") {
       ShowMore.style.display = "block";
-      item.innerHTML = "Show less"
+      item.innerHTML = "Show less";
     } else {
       ShowMore.style.display = "none";
-      item.innerHTML = "Show more"
+      item.innerHTML = "Show more";
     }
-  
+
     OnScrollTimeline(); // Update timeline
   });
 });
-

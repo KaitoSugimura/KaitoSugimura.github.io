@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Code+Pro&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Play:wght@400;700&family=Rubik:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
 
@@ -42,6 +42,8 @@
       defer
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
+    <script defer src="js/game.js"></script>
+    <script defer src="js/navigation.js"></script>
     <script defer src="js/script.js"></script>
 
     <!-- TITLE -->
@@ -72,21 +74,66 @@
 
     <!-- NAVIGATION -->
     <nav class="main-nav">
+      <span class="white-line"></span>
       <div class="main-nav-list">
-        <a class="main-nav-link" href="#Home">Home</a>
-        <a class="main-nav-link" href="#About">About</a>
-        <a class="main-nav-link" href="#Timeline">Experience</a>
-        <a class="main-nav-link" href="#Projects">Projects</a>
-        <a class="main-nav-link" href="#contact">Contact</a>
+        <a class="main-nav-link" href="#Home" id="LINKHOME"
+          ><ion-icon class="main-nav-icon" name="home-sharp"></ion-icon
+        ></a>
+        <a class="main-nav-link" href="#About" id="LINKABOUT"
+          ><ion-icon
+            class="main-nav-icon"
+            name="information-circle-sharp"
+          ></ion-icon
+        ></a>
+        <a class="main-nav-link" href="#Timeline" id="LINKEXPERIENCE"
+          ><ion-icon class="main-nav-icon" name="list-sharp"></ion-icon
+        ></a>
+        <a class="main-nav-link" href="#Projects" id="LINKPROJECTS"
+          ><ion-icon class="main-nav-icon" name="create-sharp"></ion-icon
+        ></a>
+        <a class="main-nav-link" href="#contact" id="LINKCONTACT"
+          ><ion-icon class="main-nav-icon" name="mail-sharp"></ion-icon
+        ></a>
+        <a class="main-nav-link" href="https://www.youtube.com/channel/UCRCGkq_iA6T5ORfW1M5fEWg" target="_blank" id="LINKYOUTUBE"
+        ><ion-icon class="main-nav-icon" name="logo-youtube"></ion-icon></a>
       </div>
       <div class="scroll-progress-container">
         <div class="scroll-progress"></div>
       </div>
     </nav>
+    
+    <div class="main-status">
+      <button class="nav-open-button"><ion-icon name="menu-outline"></ion-icon></button>
+      <span class="white-line"></span>
+      <div id="NAME-AND-LEVEL-CONTAINER">
+        <p id="NAME-TEXT">Kaito Sugimura</p>
+        <p class="Level" id="LEVEL-TEXT">Lv.0</p>
+      </div>
+      <div class="vertical-line-division"></div>
+      <p id="JOB-TAG">Human</p>
+      <div id="EXP-BAR">
+        <span id="EXP-BAR-PROGRESS"></span>
+      </div>
+      <div class="main-status-text">
+        <p id="EXP-TEXT">EXP: <span class="Experience-points">0/500</span></p>
+      </div>
+      <div id="TUTORIAL">
+        <p id="TUTORIAL-TITLE">Tutorial:</p>
+        <p id="TUTORIAL-DESC">Click on the glowing boxes to retrieve its EXP</p>
+      </div>
+    </div>
+    <div id="EXP-GAIN-TEXT"></div>
+    <div id="LEVELUP">
+      <div id="LEVELUP-CONTAINER">
+        <p id="LEVELUP-TEXT">LEVEL UP</p>
+        <hr />
+        <p class="Level" id="LEVELUP-LEVEL-TEXT">Lv:0</p>
+      </div>
+    </div>
     <!-- END of NAVIGATION -->
 
     <!-- ICON -->
-    <div class="icon-container">
+    <!-- <div class="icon-container">
       <a
         href="https://www.youtube.com/channel/UCRCGkq_iA6T5ORfW1M5fEWg"
         target="_blank"
@@ -98,7 +145,7 @@
           <p>YouTube _ Game Projects _ YouTube _Game Projects _</p>
         </div>
       </a>
-    </div>
+    </div> -->
     <!-- END of ICON -->
 
     <!-- MAIN -->
@@ -697,28 +744,28 @@
           </div>
 
           <div
-          class="timeline-container timeline-section-division"
-          title="Hobby"
-          id="Projects"
-        >
-          <img
-            src="img/timeline/Icons/HTML.jpg"
-            class="timeline-logo-img"
-            alt="HTML Logo"
-          />
-          <div class="timeline-textbox">
-            <h2>HTML and CSS | Codecademy</h2>
-            <div class="timeline-content-date">
-              <small>07/2021 – 07/2021</small>
+            class="timeline-container timeline-section-division"
+            title="Hobby"
+            id="Projects"
+          >
+            <img
+              src="img/timeline/Icons/HTML.jpg"
+              class="timeline-logo-img"
+              alt="HTML Logo"
+            />
+            <div class="timeline-textbox">
+              <h2>HTML and CSS | Codecademy</h2>
+              <div class="timeline-content-date">
+                <small>07/2021 – 07/2021</small>
+              </div>
+              <p>
+                Learned in a Full-Stack Engineering course for website
+                development
+              </p>
+              <span></span>
+              <!-- Arrow -->
             </div>
-            <p>
-              Learned in a Full-Stack Engineering course for website
-              development
-            </p>
-            <span></span>
-            <!-- Arrow -->
           </div>
-        </div>
 
           <div class="timeline-container">
             <img
