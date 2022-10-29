@@ -253,7 +253,7 @@ h1 {
   padding: 1rem;
   padding-left: 2rem;
   background-color: #17181945;
-  display: grid;
+  display: none;
 
   grid-template-columns: auto 2rem 1fr;
   color: #fff;
