@@ -15,6 +15,10 @@ html {
   font-size: 62.5%; /* 1 rem = 10px on normal settings */
 }
 
+#preload{
+  display: none;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1;
