@@ -41,9 +41,9 @@
     max-width: 100rem;
   }
 
-  #SHOP {
+  /* #SHOP {
     max-width: 92vw;
-  }
+  } */
 }
 
 @media (max-width: 65rem) {
