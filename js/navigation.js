@@ -30,8 +30,10 @@ const obs = new IntersectionObserver(
 );
 obs.observe(sectionHeroEl);
 
+// Reconfigure any resize events (Occurs from media queries configured in JS)
 window.addEventListener("resize", (event) => {
   if (!document.body.classList.contains("sticky")) {
+    // Change hero image
     if (mediaQueryTablet.matches) {
       mainFrontImage.style.backgroundImage =
         "url('../img/timeline/Background/MainImage_Mobile.jpg')";
@@ -41,6 +43,7 @@ window.addEventListener("resize", (event) => {
     }
   }
 
+  // Tutorial arrow
   switch (currentTutorialStep) {
     case 1:
       setArrowPos(
