@@ -31,7 +31,7 @@ AllContainers.forEach(function (item) {
     e.currentTarget.querySelector(".timeline-textbox").style.boxShadow =
       DEFAULTBOXSHADOW;
 
-      AddGold(Math.floor(Math.random() * 50))
+    AddGold(Math.floor(Math.random() * 50));
   });
 });
 
@@ -49,16 +49,25 @@ let shopOpennedAfterSecondTutorial = false;
 function tutorial(item) {
   if (!tutorialActivated) return;
   if (tutorialPannelExists) {
+    scrollIntoViewOfElement(item);
     tutorialLastClicked = item;
     tutorialPannelExists = false;
     TUTORIALDESC.innerHTML = "Wait 10 seconds to collect EXP from same box";
+    setArrowPos(
+      item.offsetLeft,
+      item.offsetTop,
+      item.offsetWidth,
+      item.offsetHeight
+    );
   } else if (tutorialLastClicked == item) {
     tutorialLastClicked = null;
     TUTORIALDESC.innerHTML = "Reduce wait time by buying items from the shop";
     clearedSecondTutorial = true;
+    setArrowToShop();
   } else if (shopOpennedAfterSecondTutorial) {
     TUTORIALDESC.innerHTML = "Congratulations!! You completed the tutorial!";
-    window.setTimeout(closeDeactivateTutorial, 4000);
+    TUTORIALARROW.style.display = "none";
+    window.setTimeout(closeDeactivateTutorial, 3000);
   }
 }
 
@@ -67,16 +76,59 @@ function closeDeactivateTutorial() {
   tutorialActivated = false;
 }
 
+const FIRSTCONTAINER = document.getElementById("first-timeline-container");
+const TUTORIALARROW = document.getElementById("TUTORIALARROW");
+
 TUTORIAL_YES.addEventListener("click", () => {
+  scrollIntoViewOfElement(FIRSTCONTAINER);
+  setArrowPos(
+    FIRSTCONTAINER.offsetLeft,
+    FIRSTCONTAINER.offsetTop,
+    FIRSTCONTAINER.offsetWidth,
+    FIRSTCONTAINER.offsetHeight
+  );
   tutorialActivated = true;
   TUTORIALDESC.style.display = "block";
   TUTORIAL_YES.style.display = "none";
   TUTORIAL_NO.style.display = "none";
 });
 
+function scrollIntoViewOfElement(el) {
+  el.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+    inline: "center",
+  });
+}
+
+function setArrowPos(x, y, width, height) {
+  TUTORIALARROW.style.display = "block";
+  TUTORIALARROW.style.top = y + "px";
+  TUTORIALARROW.style.left = x + "px";
+  TUTORIALARROW.style.transform =
+    "translate(" + (width / 2 - 50) + "px, " + height + "px )";
+}
+
 TUTORIAL_NO.addEventListener("click", () => {
   TUTORIAL.style.display = "none";
 });
+
+function setArrowToShop() {
+  const mediaQuery = window.matchMedia("(max-width: 65rem)");
+  TUTORIALARROW.style.position = "fixed";
+  if (mediaQuery.matches) {
+    TUTORIALARROW.style.top = "9rem";
+    TUTORIALARROW.style.left = "auto";
+    TUTORIALARROW.style.right = "16.5rem";
+    TUTORIALARROW.style.transform = "translate(0, 0)";
+  } else {
+    TUTORIALARROW.style.top = "auto";
+    TUTORIALARROW.style.left = "auto";
+    TUTORIALARROW.style.bottom = "9rem";
+    TUTORIALARROW.style.right = "9rem";
+    TUTORIALARROW.style.transform = "translate(0, 0) rotate(180deg)";
+  }
+}
 
 /** GAME FUNCTIONALITY **/
 let MAXEXP = 500;
@@ -150,12 +202,12 @@ function openShop() {
   }
 }
 
-function AddGold(amount){
+function AddGold(amount) {
   GLOBAL_GOLD += amount;
   updateGold();
 }
 
-function updateGold(){
+function updateGold() {
   GOLDAMOUNT.innerHTML = GLOBAL_GOLD + "G";
 }
 
@@ -176,22 +228,20 @@ const B_MOTIVATION = document.getElementById("B_MOTIVATION");
 const SKILLTIMEAMOUNT = document.getElementById("SKILLTIME");
 
 B_MOTIVATION.addEventListener("click", function buyMotivation() {
-  if(GLOBAL_GOLD >= MOTIVATION_COST){
+  if (GLOBAL_GOLD >= MOTIVATION_COST) {
     GLOBAL_GOLD -= MOTIVATION_COST;
     AddMotivationCost();
     GLOBAL_RESET_TIMER -= 500;
-    if(GLOBAL_RESET_TIMER <= 500){
+    if (GLOBAL_RESET_TIMER <= 500) {
       B_MOTIVATION.removeEventListener("click", buyMotivation);
     }
 
-    SKILLTIMEAMOUNT.innerHTML = (GLOBAL_RESET_TIMER/1000).toFixed(2);
+    SKILLTIMEAMOUNT.innerHTML = (GLOBAL_RESET_TIMER / 1000).toFixed(2);
   }
   updateGold();
 });
 
-function AddMotivationCost(){
+function AddMotivationCost() {
   MOTIVATION_COST = Math.floor(MOTIVATION_COST * (Math.random() + 1));
   MOTIVATIONPRICE.innerHTML = MOTIVATION_COST + "G";
 }
-
-

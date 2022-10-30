@@ -427,6 +427,31 @@ h1 {
   z-index: 1000;
 }
 
+#TUTORIALARROW{
+  display: none;
+  position: absolute;
+  font-size: 9.6rem;
+  z-index: 100;
+  color: #fff;
+  filter: drop-shadow(0 0 1rem #fff);
+}
+
+#TUTORIALARROW ion-icon{
+  animation: bop 1s infinite;
+}
+
+@keyframes bop {
+  0%{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(1rem);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
 #TUTORIAL-TITLE{
   text-decoration: underline;
 }

@@ -24,8 +24,8 @@ const allLinks = document.querySelectorAll("a:link");
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
     const href = link.getAttribute("href");
-    const canHover = window.matchMedia("(hover: hover)").matches;
-    const name = link.getAttribute("name");
+    // const canHover = window.matchMedia("(hover: hover)").matches;
+    // const name = link.getAttribute("name");
 
     console.log(href);
 
@@ -60,6 +60,7 @@ const LINKYOUTUBE = document.getElementById("LINKYOUTUBE");
 
 function ChangeNavigationToIcons(bChangeToIcon) {
   if (bChangeToIcon) {
+    mainNavListEl.style.display = "none";
     document.body.classList.add("onTimeline");
     LINKHOME.innerHTML =
       '<ion-icon class="main-nav-icon" name="home-sharp"></ion-icon>';
