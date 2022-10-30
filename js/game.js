@@ -14,26 +14,31 @@ const LEVELUP = document.getElementById("LEVELUP");
 const LevelTexts = document.querySelectorAll(".Level");
 const EXPGAINEL = document.getElementById("EXP-GAIN-TEXT");
 
+var CURRENT_TIMER_ID;
+
 /*** INITIALIZE ALL EXPERIENCE POINTS */
 const AllContainers = document.querySelectorAll(".timeline-container");
 AllContainers.forEach(function (item) {
   item.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
-  item.addEventListener("click", function hover(e) {
-    const AmountOfExp = Math.floor(Math.random() * 200 + 400);
-    AddGameBarEXP(AmountOfExp);
-    EXPGainText(AmountOfExp, e.clientX, e.clientY);
-    tutorial(item);
-    e.currentTarget.removeEventListener("click", hover);
-    window.setTimeout(function () {
-      item.addEventListener("click", hover);
-      item.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
-    }, GLOBAL_RESET_TIMER);
-    e.currentTarget.querySelector(".timeline-textbox").style.boxShadow =
-      DEFAULTBOXSHADOW;
-
-    AddGold(Math.floor(Math.random() * 50));
-  });
+  item.addEventListener("click", hover);
 });
+
+function hover(e) {
+  const AmountOfExp = Math.floor(Math.random() * 200 + 400);
+  AddGameBarEXP(AmountOfExp);
+  EXPGainText(AmountOfExp, e.clientX, e.clientY);
+  tutorial(e.currentTarget);
+  e.currentTarget.removeEventListener("click", hover);
+  var i = e.currentTarget;
+  CURRENT_TIMER_ID = window.setTimeout(function () {
+    i.addEventListener("click", hover);
+    i.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
+  }, GLOBAL_RESET_TIMER);
+  e.currentTarget.querySelector(".timeline-textbox").style.boxShadow =
+    DEFAULTBOXSHADOW;
+
+  AddGold(Math.floor(Math.random() * 50));
+}
 
 /** TUTORIAL  **/
 const TUTORIAL = document.getElementById("TUTORIAL");
@@ -52,7 +57,7 @@ function tutorial(item) {
     scrollIntoViewOfElement(item);
     tutorialLastClicked = item;
     tutorialPannelExists = false;
-    TUTORIALDESC.innerHTML = "Wait 10 seconds to collect EXP from same box";
+    TUTORIALDESC.innerHTML = "Wait 10 seconds to collect EXP from the same box";
     setArrowPos(
       item.offsetLeft,
       item.offsetTop,
@@ -76,21 +81,25 @@ function closeDeactivateTutorial() {
   tutorialActivated = false;
 }
 
-const FIRSTCONTAINER = document.getElementById("first-timeline-container");
+const SECONDCONTAINER = document.getElementById("second-timeline-container");
 const TUTORIALARROW = document.getElementById("TUTORIALARROW");
 
 TUTORIAL_YES.addEventListener("click", () => {
-  scrollIntoViewOfElement(FIRSTCONTAINER);
+  scrollIntoViewOfElement(SECONDCONTAINER);
   setArrowPos(
-    FIRSTCONTAINER.offsetLeft,
-    FIRSTCONTAINER.offsetTop,
-    FIRSTCONTAINER.offsetWidth,
-    FIRSTCONTAINER.offsetHeight
+    SECONDCONTAINER.offsetLeft,
+    SECONDCONTAINER.offsetTop,
+    SECONDCONTAINER.offsetWidth,
+    SECONDCONTAINER.offsetHeight
   );
   tutorialActivated = true;
   TUTORIALDESC.style.display = "block";
   TUTORIAL_YES.style.display = "none";
   TUTORIAL_NO.style.display = "none";
+
+  window.clearTimeout(CURRENT_TIMER_ID);
+  SECONDCONTAINER.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
+  SECONDCONTAINER.addEventListener("click", hover);
 });
 
 function scrollIntoViewOfElement(el) {
@@ -199,6 +208,7 @@ function closeShop() {
 function openShop() {
   SHOP.style.display = "grid";
   if (clearedSecondTutorial) {
+    TUTORIALARROW.style.display = "none";
     shopOpennedAfterSecondTutorial = true;
   }
 }

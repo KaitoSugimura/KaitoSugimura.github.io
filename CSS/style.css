@@ -463,6 +463,11 @@ h1 {
   display: none;
 }
 
+.tutorial-button-container{
+  display: flex;
+  align-items: center;
+}
+
 .tutorial-button{
   font-size: 3.2rem;
   margin-top: 2rem;
@@ -472,6 +477,7 @@ h1 {
   background-color: #0e5ead;
   cursor: pointer;
 }
+
 #TUTORIAL-YES{
   margin-right: 1rem;
 }
