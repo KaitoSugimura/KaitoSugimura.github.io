@@ -117,9 +117,10 @@ function setArrowToShop() {
   const mediaQuery = window.matchMedia("(max-width: 65rem)");
   TUTORIALARROW.style.position = "fixed";
   if (mediaQuery.matches) {
+    mainNavListEl.style.display = "flex";
     TUTORIALARROW.style.top = "9rem";
     TUTORIALARROW.style.left = "auto";
-    TUTORIALARROW.style.right = "16.5rem";
+    TUTORIALARROW.style.right = "15.5rem";
     TUTORIALARROW.style.transform = "translate(0, 0)";
   } else {
     TUTORIALARROW.style.top = "auto";
