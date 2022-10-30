@@ -190,19 +190,6 @@
     font-size: 40%;
   }
 
-  .section-hero {
-    height: 100vh;
-    position: relative;
-    background-image: linear-gradient(
-        to left,
-        rgba(0, 15, 42, 0),
-        rgba(0, 15, 42, 0.5)
-      ),
-      url("../img/About/Cliff_Mobile.jpg");
-    background-size: cover;
-    color: #fff;
-  }
-
   .onTimeline .main-nav-icon {
     font-size: 4.2rem;
   }

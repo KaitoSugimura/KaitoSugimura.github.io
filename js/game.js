@@ -1,4 +1,5 @@
 "use strict";
+const mediaQueryTablet = window.matchMedia("(max-width: 65rem)");
 /************************************************/
 /* GAME */
 /************************************************/
@@ -48,8 +49,10 @@ const TUTORIAL_NO = document.getElementById("TUTORIAL-NO");
 let tutorialActivated = false;
 let tutorialPannelExists = true;
 let tutorialLastClicked = null;
-let clearedSecondTutorial = false;
 let shopOpennedAfterSecondTutorial = false;
+
+let currentTutorialStep = 0;
+let step2Item = null;
 
 function tutorial(item) {
   if (!tutorialActivated) return;
@@ -64,11 +67,13 @@ function tutorial(item) {
       item.offsetWidth,
       item.offsetHeight
     );
+    currentTutorialStep = 2;
+    step2Item = item;
   } else if (tutorialLastClicked == item) {
     tutorialLastClicked = null;
     TUTORIALDESC.innerHTML = "Reduce wait time by buying items from the shop";
-    clearedSecondTutorial = true;
     setArrowToShop();
+    currentTutorialStep = 3;
   } else if (shopOpennedAfterSecondTutorial) {
     TUTORIALDESC.innerHTML = "Congratulations!! You completed the tutorial!";
     TUTORIALARROW.style.display = "none";
@@ -100,6 +105,7 @@ TUTORIAL_YES.addEventListener("click", () => {
   window.clearTimeout(CURRENT_TIMER_ID);
   SECONDCONTAINER.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
   SECONDCONTAINER.addEventListener("click", hover);
+  currentTutorialStep = 1;
 });
 
 function scrollIntoViewOfElement(el) {
@@ -123,9 +129,8 @@ TUTORIAL_NO.addEventListener("click", () => {
 });
 
 function setArrowToShop() {
-  const mediaQuery = window.matchMedia("(max-width: 65rem)");
   TUTORIALARROW.style.position = "fixed";
-  if (mediaQuery.matches) {
+  if (mediaQueryTablet.matches) {
     mainNavListEl.style.display = "flex";
     TUTORIALARROW.style.top = "9rem";
     TUTORIALARROW.style.left = "auto";
@@ -207,7 +212,7 @@ function closeShop() {
 
 function openShop() {
   SHOP.style.display = "grid";
-  if (clearedSecondTutorial) {
+  if (currentTutorialStep == 3) {
     TUTORIALARROW.style.display = "none";
     shopOpennedAfterSecondTutorial = true;
   }

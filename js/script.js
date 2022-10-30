@@ -14,6 +14,7 @@ const mainFrontImage = document.querySelector(".main-front-img");
 const aboutSectionEl = document.querySelector(".section-about");
 const bIsTimeline = false;
 var previousLoopSection = "SomeState";
+var currentLoopSection = "";
 
 document.addEventListener("scroll", OnScrollTimeline);
 
@@ -58,7 +59,7 @@ function OnScrollTimeline() {
     ".timeline-section-division, .timeline-container"
   );
 
-  var currentLoopSection = "";
+  currentLoopSection = "";
 
   AllTimelineSections.forEach((item) => {
     if (item.classList.contains("timeline-container")) {
@@ -102,12 +103,15 @@ function OnScrollTimeline() {
   if (currentLoopSection !== previousLoopSection) {
     switch (currentLoopSection) {
       case "":
-        mainFrontImage.style.backgroundImage =
-          "url('../img/timeline/Background/White.jpg')";
-        mainFrontImage.classList.add("img-load");
-        aboutSectionEl.classList.remove("fade-out");
+        console.log("HELLO");
+        if (document.body.classList.contains("sticky")) {
+          mainFrontImage.style.backgroundImage =
+            "url('../img/timeline/Background/White.jpg')";
+          mainFrontImage.classList.add("img-load");
+          aboutSectionEl.classList.remove("fade-out");
+        }
         setGameBarVisibility(false);
-        ChangeNavigationToIcons(false);
+          ChangeNavigationToIcons(false);
         break;
       case "start":
         mainFrontImage.style.backgroundImage =

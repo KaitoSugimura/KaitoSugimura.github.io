@@ -36,20 +36,10 @@ body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-
-  /*
-    background-image: linear-gradient(
-      rgba(34, 34, 34, 0.4),
-      Remember to change GRADIENT const in js if this is changed
-      rgba(34, 34, 34, 0.4)
-      ),
-      url("../img/timeline/Background/CJCSGrad.jpg");
-  */
 }
 
 .main-front-img{
   z-index: -99;
-  opacity: 0;
 }
 
 .main-front-img.img-load{

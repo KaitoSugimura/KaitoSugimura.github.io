@@ -2,19 +2,67 @@
 /* STICKY NAV  */
 /************************************************/
 const sectionHeroEl = document.querySelector(".section-hero");
+const sectionAboutEl = document.querySelector(".section-about");
 
 const obs = new IntersectionObserver(
   function (entries) {
     const ent = entries[0];
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
+      if (currentLoopSection == "") {
+        mainFrontImage.style.backgroundImage =
+          "url('../img/timeline/Background/White.jpg')";
+      } 
+      sectionAboutEl.style.backgroundColor = "transparent";
     } else {
       document.body.classList.remove("sticky");
+      sectionAboutEl.style.backgroundColor = "#fff";
+      if (mediaQueryTablet.matches) {
+        mainFrontImage.style.backgroundImage =
+          "url('../img/timeline/Background/MainImage_Mobile.jpg')";
+      } else {
+        mainFrontImage.style.backgroundImage =
+          "url('../img/timeline/Background/MainImage.jpg')";
+      }
     }
   },
   { root: null, threshold: 0 }
 );
 obs.observe(sectionHeroEl);
+
+window.addEventListener("resize", (event) => {
+  if (!document.body.classList.contains("sticky")) {
+    if (mediaQueryTablet.matches) {
+      mainFrontImage.style.backgroundImage =
+        "url('../img/timeline/Background/MainImage_Mobile.jpg')";
+    } else {
+      mainFrontImage.style.backgroundImage =
+        "url('../img/timeline/Background/MainImage.jpg')";
+    }
+  }
+
+  switch (currentTutorialStep) {
+    case 1:
+      setArrowPos(
+        SECONDCONTAINER.offsetLeft,
+        SECONDCONTAINER.offsetTop,
+        SECONDCONTAINER.offsetWidth,
+        SECONDCONTAINER.offsetHeight
+      );
+      break;
+    case 2:
+      setArrowPos(
+        step2Item.offsetLeft,
+        step2Item.offsetTop,
+        step2Item.offsetWidth,
+        step2Item.offsetHeight
+      );
+      break;
+    case 3:
+      setArrowToShop();
+      break;
+  }
+});
 
 /************************************************/
 /* SMOOTH SCROLLING  */
@@ -101,4 +149,3 @@ mainNavOpenButton.addEventListener("click", () => {
     mainNavListEl.style.display = "none";
   }
 });
-
