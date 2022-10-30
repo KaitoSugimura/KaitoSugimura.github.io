@@ -41,7 +41,7 @@
     max-width: 100rem;
   }
 
-  #SHOP{
+  #SHOP {
     max-width: 92vw;
   }
 }
@@ -55,7 +55,7 @@
     right: 10rem;
   }
 
-  .nav-open-button{
+  .nav-open-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,10 +69,18 @@
     background-color: rgba(86, 86, 86, 0.555);
     border: none;
   }
+
+  #TUTORIAL{
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (min-width: 65rem) {
-  .main-nav-list{
+  .main-nav-list {
     display: flex !important;
   }
 }
@@ -163,8 +171,6 @@
   .timeline-container:nth-child(odd) img {
     left: -2rem;
   }
-  
-
 }
 
 /**************************************/
@@ -194,16 +200,16 @@
     font-size: 4.2rem;
   }
 
-  #SHOP{
+  #SHOP {
     font-size: 0.8rem;
     max-width: 92vw;
   }
 
-  #SKILL-STAT-CONTAINER{
+  #SKILL-STAT-CONTAINER {
     width: 30rem;
   }
 
-  .shop-item-container{
+  .shop-item-container {
     margin: 8em 0em;
   }
 }
