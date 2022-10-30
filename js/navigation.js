@@ -55,6 +55,7 @@ const LINKABOUT = document.getElementById("LINKABOUT");
 const LINKEXPERIENCE = document.getElementById("LINKEXPERIENCE");
 const LINKPROJECTS = document.getElementById("LINKPROJECTS");
 const LINKCONTACT = document.getElementById("LINKCONTACT");
+const LINKSHOP = document.getElementById("LINKSHOP");
 const LINKYOUTUBE = document.getElementById("LINKYOUTUBE");
 
 function ChangeNavigationToIcons(bChangeToIcon) {
@@ -70,6 +71,10 @@ function ChangeNavigationToIcons(bChangeToIcon) {
       '<ion-icon class="main-nav-icon" name="create-sharp"></ion-icon>';
     LINKCONTACT.innerHTML =
       '<ion-icon class="main-nav-icon" name="mail-sharp"></ion-icon>';
+
+    LINKSHOP.style.display = "block";
+    LINKSHOP.innerHTML =
+      '<ion-icon class="main-nav-icon" name="storefront-sharp"></ion-icon>';
     LINKYOUTUBE.style.display = "block";
     LINKYOUTUBE.innerHTML =
       '<ion-icon class="main-nav-icon" name="logo-youtube"></ion-icon>';
@@ -81,6 +86,7 @@ function ChangeNavigationToIcons(bChangeToIcon) {
     LINKEXPERIENCE.innerHTML = "Timeline";
     LINKPROJECTS.innerHTML = "Projects";
     LINKCONTACT.innerHTML = "Contact";
+    LINKSHOP.style.display = "none";
     LINKYOUTUBE.style.display = "none";
   }
 }
@@ -95,6 +101,3 @@ mainNavOpenButton.addEventListener("click", () => {
   }
 });
 
-function setMainNavVisibility(){
-
-}

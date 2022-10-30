@@ -40,6 +40,10 @@
   .contact-container {
     max-width: 100rem;
   }
+
+  #SHOP{
+    max-width: 92vw;
+  }
 }
 
 @media (max-width: 60rem) {
@@ -186,4 +190,20 @@
     color: #fff;
   }
 
+  .onTimeline .main-nav-icon {
+    font-size: 4.2rem;
+  }
+
+  #SHOP{
+    font-size: 0.8rem;
+    max-width: 92vw;
+  }
+
+  #SKILL-STAT-CONTAINER{
+    width: 30rem;
+  }
+
+  .shop-item-container{
+    margin: 8em 0em;
+  }
 }
