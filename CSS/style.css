@@ -23,12 +23,12 @@
   max-width: 120rem;
   position: absolute;
   top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+  left: 12%;
+  transform: translate(0%, -50%);
 }
 
 .h1-subheading-container {
-  margin-bottom: 2.8rem;
+  margin-bottom: 3.6rem;
   width: max-content;
 }
 
@@ -73,9 +73,14 @@
 
 h1 {
   font-size: 6rem;
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2.4rem;
+}
+
+h1 span{
+  font-size: 6rem;
+  font-weight: 600;
 }
 
 .hero-description {
@@ -84,10 +89,31 @@ h1 {
   margin-bottom: 4.8rem;
 }
 
+.contact-SS-hero {
+  position: absolute;
+  bottom: 9.6rem;
+  left: 12%;
+  /* transform: translateX(-50%); */
+  font-size: 4.8rem;
+  display: flex;
+  gap: 4.8rem;
+  justify-content: center;
+}
+
+.contact-SS-link-hero:link,
+.contact-SS-link-hero:visited{
+  color: rgba(205, 213, 222, 0.5)
+}
+
+.contact-SS-link-hero:hover,
+.contact-SS-link-hero:active{
+  color: rgba(205, 213, 222, 1)
+}
+
 .hero-down-icon {
   opacity: 0;
   position: absolute;
-  bottom: 5%;
+  bottom: 5.4rem;
   right: 8%;
   width: 15rem;
   height: 15rem;
@@ -146,7 +172,7 @@ h1 {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  font-family: "Sen", sans-serif;
+  font-family: "Sen", "Inter", sans-serif;
   font-weight: 700;
   color: #333;
   font-weight: 500;
@@ -292,7 +318,7 @@ h1 {
   left: 2.5rem;
   align-items: center;
   z-index: 1000;
-  font-family: "Play";
+  font-family: "Play", "Inter", sans-serif;
   border-radius: 0.1rem;
   padding: 1rem;
   padding-left: 2rem;
@@ -740,6 +766,8 @@ h1 {
   margin: 9.6rem auto;
   display: flex;
   justify-content: center;
+  font-family: "Cinzel", "Inter", sans-serif;
+  word-spacing: 1.5;
 }
 
 .timeline-content-onScreen .timeline-main-heading{
@@ -763,7 +791,7 @@ h1 {
   max-width: 120rem;
   margin: 9.6rem auto 0rem auto;
   padding-top: 50vh;
-  color: #171819;
+  color: #131314;
 }
 
 .timeline-line {

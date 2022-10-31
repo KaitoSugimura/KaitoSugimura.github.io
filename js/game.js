@@ -215,6 +215,7 @@ function openShop() {
   if (currentTutorialStep == 3) {
     TUTORIALARROW.style.display = "none";
     shopOpennedAfterSecondTutorial = true;
+    TUTORIALDESC.innerHTML = "Collect more EXP by clicking on more boxes";
   }
 }
 
