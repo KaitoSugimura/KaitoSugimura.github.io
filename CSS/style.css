@@ -716,8 +716,8 @@ h1 span{
 
 .about-picture{
   width: 16rem;
-  border-radius: 50%;
-  border: 0.1rem solid #333;
+  height: 16rem;
+  border-radius: 100rem;
   margin-bottom: 3.6rem;
 }
 
@@ -763,15 +763,15 @@ h1 span{
 
 .timeline-main-heading {
   font-size: 4.8rem;
-  margin: 9.6rem auto;
   display: flex;
   justify-content: center;
+  margin: 9.6rem auto;
   font-family: "Cinzel", "Inter", sans-serif;
   word-spacing: 1.5;
 }
 
 .timeline-content-onScreen .timeline-main-heading{
-  text-shadow: 0.25rem 0.25rem 1.8rem #777c81;
+  text-shadow: 0.25rem 0.25rem 2rem #24272a;
 }
 
 .timeline-section-tag-content {
