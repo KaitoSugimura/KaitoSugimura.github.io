@@ -109,6 +109,14 @@ function OnScrollTimeline() {
             "url('../img/timeline/Background/White.jpg')";
           mainFrontImage.classList.add("img-load");
           aboutSectionEl.classList.remove("fade-out");
+        } else {
+          if (mediaQueryTablet.matches) {
+            mainFrontImage.style.backgroundImage =
+              "url('../img/timeline/Background/MainImage_Mobile.jpg')";
+          } else {
+            mainFrontImage.style.backgroundImage =
+              "url('../img/timeline/Background/MainImage.jpg')";
+          }
         }
         setGameBarVisibility(false);
           ChangeNavigationToIcons(false);
