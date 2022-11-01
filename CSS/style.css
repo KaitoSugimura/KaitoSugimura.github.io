@@ -463,10 +463,10 @@ h1 span{
 #TUTORIALARROW{
   display: none;
   position: absolute;
-  font-size: 9.6rem;
+  font-size: 12rem;
   z-index: 100;
-  color: #fff;
-  filter: drop-shadow(0 0 1rem rgb(77, 77, 77))
+  color: rgb(255, 0, 0);
+  filter: drop-shadow(0 0 1rem rgb(255, 0, 0))
   drop-shadow(0 0 1rem rgb(255, 255, 255));
 }
 

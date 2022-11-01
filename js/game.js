@@ -5,7 +5,7 @@ const mediaQueryTablet = window.matchMedia("(max-width: 65rem)");
 /************************************************/
 var GLOBAL_RESET_TIMER = 10000;
 var GLOBAL_GOLD = 200;
-const GLOWBOXSHADOW = "0rem 0.5rem 2rem rgba(240, 225, 173, 0.701)";
+const GLOWBOXSHADOW = "0rem 0rem 3rem rgba(240, 225, 173, 0.75)";
 const DEFAULTBOXSHADOW = "0rem 1rem 1rem rgba(25, 32, 44, 0.2)";
 
 const mainStatusBar = document.querySelector(".main-status");
@@ -69,6 +69,7 @@ function tutorial(item) {
     );
     currentTutorialStep = 2;
     step2Item = item;
+    setTimerForTutorial2ScrollUp(item);
   } else if (tutorialLastClicked == item) {
     tutorialLastClicked = null;
     TUTORIALDESC.innerHTML = "Reduce wait time by buying items from the shop";
@@ -134,13 +135,13 @@ function setArrowToShop() {
     mainNavListEl.style.display = "flex";
     TUTORIALARROW.style.top = "9rem";
     TUTORIALARROW.style.left = "auto";
-    TUTORIALARROW.style.right = "15.5rem";
+    TUTORIALARROW.style.right = "15rem";
     TUTORIALARROW.style.transform = "translate(0, 0)";
   } else {
     TUTORIALARROW.style.top = "auto";
     TUTORIALARROW.style.left = "auto";
     TUTORIALARROW.style.bottom = "9rem";
-    TUTORIALARROW.style.right = "9rem";
+    TUTORIALARROW.style.right = "8rem";
     TUTORIALARROW.style.transform = "translate(0, 0) rotate(180deg)";
   }
 }
@@ -261,4 +262,10 @@ B_MOTIVATION.addEventListener("click", function buyMotivation() {
 function AddMotivationCost() {
   MOTIVATION_COST = Math.floor(MOTIVATION_COST * (Math.random() + 1));
   MOTIVATIONPRICE.innerHTML = MOTIVATION_COST + "G";
+}
+
+function setTimerForTutorial2ScrollUp(item){
+  window.setTimeout(function (){
+    scrollIntoViewOfElement(item);
+  }, 10000);
 }

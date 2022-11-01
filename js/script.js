@@ -246,3 +246,6 @@ ShowMoreButton.forEach(function (item) {
     OnScrollTimeline(); // Update timeline
   });
 });
+
+
+OnScrollTimeline(); // Update timeline
