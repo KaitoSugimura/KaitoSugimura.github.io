@@ -378,6 +378,14 @@ h1 span{
   font-size: 1.6rem;
 }
 
+#EXP-GAIN-TEXT{
+  font-size: 4.8rem;
+  text-shadow: 0.5rem 0.5rem 1rem #fff;
+  color: #000;
+  font-weight: 600;
+  pointer-events: none;
+}
+
 #LEVELUP{
   pointer-events: none;
   display: none;
@@ -465,13 +473,28 @@ h1 span{
   position: absolute;
   font-size: 12rem;
   z-index: 100;
-  color: rgb(255, 0, 0);
-  filter: drop-shadow(0 0 1rem rgb(255, 0, 0))
-  drop-shadow(0 0 1rem rgb(255, 255, 255));
+  color: rgb(255, 17, 17);
+  filter: drop-shadow(0rem 0.5rem 0.2rem rgb(255, 255, 255));
 }
 
 #TUTORIALARROW ion-icon{
   animation: bop 1s infinite;
+}
+
+.arrow-sub-icon svg{
+  position: absolute;
+  top: -2.5rem;
+  right: -2rem;
+  width: 6rem;
+  color: rgb(0, 0, 0);
+}
+
+.arrow-sub-icon p{
+  position: absolute;
+  top: -2.5rem;
+  right: -4.5rem;
+  font-size: 2rem;
+  color: rgb(0, 0, 0);
 }
 
 @keyframes bop {
@@ -913,7 +936,7 @@ h1 span{
 }
 
 .timeline-container:hover .timeline-textbox {
-  transform: scale(101%);
+  transform: scale(100.5%);
   box-shadow: 0rem 1rem 1rem rgba(25, 32, 44, 0.1);
 }
 

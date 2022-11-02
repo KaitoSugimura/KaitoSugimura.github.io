@@ -46,6 +46,8 @@ const TUTORIAL = document.getElementById("TUTORIAL");
 const TUTORIALDESC = document.getElementById("TUTORIAL-DESC");
 const TUTORIAL_YES = document.getElementById("TUTORIAL-YES");
 const TUTORIAL_NO = document.getElementById("TUTORIAL-NO");
+const ArrowSubIconEl = document.querySelector(".arrow-sub-icon");
+
 let tutorialActivated = false;
 let tutorialPannelExists = true;
 let tutorialLastClicked = null;
@@ -69,8 +71,13 @@ function tutorial(item) {
     );
     currentTutorialStep = 2;
     step2Item = item;
+
+    ArrowSubIconEl.innerHTML =
+      '<p>10s</p> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>';
+
     setTimerForTutorial2ScrollUp(item);
   } else if (tutorialLastClicked == item) {
+    ArrowSubIconEl.innerHTML = "";
     tutorialLastClicked = null;
     TUTORIALDESC.innerHTML = "Reduce wait time by buying items from the shop";
     setArrowToShop();
@@ -104,7 +111,8 @@ TUTORIAL_YES.addEventListener("click", () => {
   TUTORIAL_NO.style.display = "none";
 
   window.clearTimeout(CURRENT_TIMER_ID);
-  SECONDCONTAINER.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
+  SECONDCONTAINER.querySelector(".timeline-textbox").style.boxShadow =
+    GLOWBOXSHADOW;
   SECONDCONTAINER.addEventListener("click", hover);
   currentTutorialStep = 1;
 });
@@ -171,7 +179,7 @@ function EXPGainText(Amount, x, y) {
     x +
     "px; top: " +
     y +
-    'px; animation: ExpGainSlideUp 1s linear forwards; font-size: 4.8rem; text-shadow: 0 0 1rem #fff; color: #000;";>' +
+    'px; animation: ExpGainSlideUp 1s linear forwards; ">' +
     "+" +
     Amount +
     "</div>";
@@ -264,8 +272,11 @@ function AddMotivationCost() {
   MOTIVATIONPRICE.innerHTML = MOTIVATION_COST + "G";
 }
 
-function setTimerForTutorial2ScrollUp(item){
-  window.setTimeout(function (){
+function setTimerForTutorial2ScrollUp(item) {
+  window.setTimeout(function () {
     scrollIntoViewOfElement(item);
+
+    ArrowSubIconEl.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>';
   }, 10000);
 }
