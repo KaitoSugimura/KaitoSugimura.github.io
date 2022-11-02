@@ -48,10 +48,6 @@
   animation-delay: 0s, 2s;
 }
 
-.h1-subheading:hover {
-  animation: none;
-}
-
 @keyframes typing {
   from {
     width: 0;
@@ -380,7 +376,7 @@ h1 span{
 
 #EXP-GAIN-TEXT{
   font-size: 4.8rem;
-  text-shadow: 0.5rem 0.5rem 1rem #fff;
+  text-shadow: 0.3rem 0.3rem 0.4rem #fff;
   color: #000;
   font-weight: 600;
   pointer-events: none;
@@ -461,7 +457,6 @@ h1 span{
   color: white;
   font-size: 3.8rem;
   max-width: 50rem;
-  text-shadow: 0.3rem -0.2rem 1rem;
   background-color: #1718199d;
   padding: 1.5rem 5rem;
   border-radius: 1rem;
@@ -473,19 +468,20 @@ h1 span{
   position: absolute;
   font-size: 12rem;
   z-index: 100;
-  color: rgb(255, 17, 17);
-  filter: drop-shadow(0rem 0.5rem 0.2rem rgb(255, 255, 255));
+  color: #ff0e06;
 }
 
 #TUTORIALARROW ion-icon{
   animation: bop 1s infinite;
+  filter: drop-shadow(0rem 0.3rem 0.3rem rgb(255, 30, 30));
 }
 
 .arrow-sub-icon svg{
+  filter: drop-shadow(0rem 0.5rem 0.1rem rgb(255, 255, 255));
   position: absolute;
   top: -2.5rem;
-  right: -2rem;
-  width: 6rem;
+  right: -0.5rem;
+  width: 5rem;
   color: rgb(0, 0, 0);
 }
 
@@ -507,10 +503,6 @@ h1 span{
   100%{
     transform: translateY(0%);
   }
-}
-
-#TUTORIAL-TITLE{
-  text-decoration: underline;
 }
 
 #TUTORIAL-DESC{
@@ -550,7 +542,8 @@ h1 span{
 
   display: none;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  gap: 2.4rem;
+  padding: 2.4rem;
   align-content: center;
   justify-items: center;
 
@@ -561,8 +554,24 @@ h1 span{
 #SHOP-TITLE{
   grid-row: 1;
   grid-column: 1/-1;
-  font-size: 4.8em;
-  margin-top: 4.8rem;
+  font-size: 5.4em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#SHOP-GOLD-AMOUNT{
+  color: rgb(0, 0, 0);
+  font-size: 2.8rem;
+  font-weight: 600;
+  background-color: rgb(236, 185, 0);
+  padding: 1rem 2.5rem;
+  border: #000 solid 0.4rem;
+  grid-column: 1/-1;
+  margin-bottom: 0.4rem;
+}
+
+#SHOP-GOLD-AMOUNT p {
+  display: inline;
 }
 
 .shop-item-container{
@@ -570,7 +579,14 @@ h1 span{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 8em 2.4em;
+  padding: 2.4em 1em;
+  color: #000;
+  background-color: #fffffff8;
+  border: #000000 solid 0.4rem;
+}
+
+.shop-item-container:hover{
+  transform: scale(100.5%);
 }
 
 .shop-item-name{
@@ -592,9 +608,19 @@ h1 span{
 .shop-item-buy-button{
   font-size: 1.8rem;
   padding: 0.4em 1em;
-  background-color: rgba(225, 216, 41, 0.868);
+  background-color: rgba(255, 204, 21,1);
   justify-self: end;
   font-weight: 700;
+  border: #131314 solid 0.3rem;
+}
+
+.shop-item-buy-button:hover{
+  transform: scale(105%);
+  transition: 0.3s all;
+}
+
+.shop-item-buy-button:active{
+  background-color: rgba(133, 107, 11, 0.868);
 }
 
 .shop-item-desc{
@@ -616,7 +642,7 @@ h1 span{
   background-color: rgba(196, 51, 51, 0.868);
 }
 
-#GOLD-AMOUNT{
+#MAIN-GOLD-AMOUNT{
   font-size: 2.4rem;
 }
 

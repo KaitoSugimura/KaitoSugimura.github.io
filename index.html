@@ -15,12 +15,9 @@
     />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@400;500;700&family=Permanent+Marker&family=Play:wght@400;700&family=Rubik:wght@400;500;700&family=Sen:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@400;500;700&family=Play:wght@400;700&family=Rubik:wght@400;500;700&family=Sen:wght@400;700&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/general.css" />
@@ -148,6 +145,8 @@
       </div>
     </nav>
 
+    <div id="INIT_GAME"></div>
+
     <div class="main-status">
       <button class="nav-open-button">
         <ion-icon name="menu-outline"></ion-icon>
@@ -166,7 +165,7 @@
         </div>
         <div class="flex-spacebetween align-self-end" id="JOB-GOLD-CONTAINER">
           <p id="JOB-TAG">Human</p>
-          <p id="GOLD-AMOUNT">200G</p>
+          <p class="GOLD-UPDATE-JS" id="MAIN-GOLD-AMOUNT">200G</p>
         </div>
       </div>
       <div id="EXP-BAR">
@@ -198,6 +197,7 @@
     <!-- SHOP -->
     <div class="background-mask" id="SHOP">
       <h2 id="SHOP-TITLE">SHOP</h2>
+      <div id="SHOP-GOLD-AMOUNT">TOTAL: <p class="GOLD-UPDATE-JS">200G</p></div>
       <div class="shop-item-container">
         <h3 class="shop-item-name">Motivation</h3>
         <p class="shop-item-desc">Reduce wait time for next EXP collection</p>
@@ -276,7 +276,7 @@
             dream is to become an engineer/developer that would do the same and
             bring a smile to another person's face. To be bluntly honest, until
             recently, I never really fully understood what it meant to be a
-            software engineer. In fact I initially chose this degree out of
+            Software Engineer. In fact I initially chose this degree out of
             spite thinking it was just computer related. But right now, I am
             glad to be where I am and I can confidently say, this is where I
             belong. Coding can be challenging or even frustrating at times, but

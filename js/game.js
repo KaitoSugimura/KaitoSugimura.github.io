@@ -213,7 +213,7 @@ LEVELUP.addEventListener("animationend", () => {
 const SHOP = document.getElementById("SHOP");
 const SHOPOPENBUTTON = document.getElementById("LINKSHOP");
 const SHOPCLOSEBUTTON = document.getElementById("SHOPCLOSEBUTTON");
-const GOLDAMOUNT = document.getElementById("GOLD-AMOUNT");
+const GOLD_UPDATE_ELEMENTS = document.querySelectorAll(".GOLD-UPDATE-JS");
 
 function closeShop() {
   SHOP.style.display = "none";
@@ -234,7 +234,10 @@ function AddGold(amount) {
 }
 
 function updateGold() {
-  GOLDAMOUNT.innerHTML = GLOBAL_GOLD + "G";
+  GOLD_UPDATE_ELEMENTS.forEach( (GoldUpdate) => {
+    console.log(GoldUpdate);
+    GoldUpdate.innerHTML = GLOBAL_GOLD + "G";
+  });
 }
 
 SHOPOPENBUTTON.addEventListener("click", () => {
