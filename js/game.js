@@ -19,10 +19,12 @@ var CURRENT_TIMER_ID;
 
 /*** INITIALIZE ALL EXPERIENCE POINTS */
 const AllContainers = document.querySelectorAll(".timeline-container");
-AllContainers.forEach(function (item) {
-  item.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
-  item.addEventListener("click", hover);
-});
+function INIT_Containers(){
+  AllContainers.forEach(function (item) {
+    item.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
+    item.addEventListener("click", hover);
+  });
+}
 
 function hover(e) {
   const AmountOfExp = Math.floor(Math.random() * 200 + 400);
@@ -85,7 +87,7 @@ function tutorial(item) {
   } else if (shopOpennedAfterSecondTutorial) {
     TUTORIALDESC.innerHTML = "Congratulations!! You completed the tutorial!";
     TUTORIALARROW.style.display = "none";
-    window.setTimeout(closeDeactivateTutorial, 3000);
+    window.setTimeout(closeDeactivateTutorial, 2500);
   }
 }
 
@@ -97,7 +99,7 @@ function closeDeactivateTutorial() {
 const SECONDCONTAINER = document.getElementById("second-timeline-container");
 const TUTORIALARROW = document.getElementById("TUTORIALARROW");
 
-TUTORIAL_YES.addEventListener("click", () => {
+function setTutorial(){
   scrollIntoViewOfElement(SECONDCONTAINER);
   setArrowPos(
     SECONDCONTAINER.offsetLeft,
@@ -115,7 +117,7 @@ TUTORIAL_YES.addEventListener("click", () => {
     GLOWBOXSHADOW;
   SECONDCONTAINER.addEventListener("click", hover);
   currentTutorialStep = 1;
-});
+};
 
 function scrollIntoViewOfElement(el) {
   el.scrollIntoView({
@@ -161,7 +163,7 @@ let currentLevel = 0;
 let MAXEXP_multiplier = 2.5;
 
 function setGameBarVisibility(bGameBarVisible) {
-  mainStatusBar.style.display = bGameBarVisible ? "grid" : "none";
+  mainStatusBar.style.display = (bGameBarVisible && bGameOn) ? "grid" : "none";
 }
 function AddGameBarEXP(Amount) {
   currentEXP += Amount;
@@ -283,3 +285,4 @@ function setTimerForTutorial2ScrollUp(item) {
       '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>';
   }, 10000);
 }
+

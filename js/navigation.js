@@ -109,8 +109,9 @@ const LINKCONTACT = document.getElementById("LINKCONTACT");
 const LINKSHOP = document.getElementById("LINKSHOP");
 const LINKYOUTUBE = document.getElementById("LINKYOUTUBE");
 
+
 function ChangeNavigationToIcons(bChangeToIcon) {
-  if (bChangeToIcon) {
+  if (bChangeToIcon && bGameOn) {
     mainNavListEl.style.display = "none";
     document.body.classList.add("onTimeline");
     LINKHOME.innerHTML =

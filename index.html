@@ -15,9 +15,12 @@
     />
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@400;500;700&family=Play:wght@400;700&family=Rubik:wght@400;500;700&family=Sen:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Inter:wght@400;500;700&family=Play:wght@400;700&family=Rubik:wght@400;500;700&family=Sen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <!-- css -->
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/general.css" />
@@ -38,6 +41,7 @@
       defer
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
+    <script defer src="js/INIT.js"></script>
     <script defer src="js/preload.js"></script>
     <script defer src="js/game.js"></script>
     <script defer src="js/navigation.js"></script>
@@ -145,7 +149,21 @@
       </div>
     </nav>
 
-    <div id="INIT_GAME"></div>
+    <div id="INIT_GAME">
+      <div id="INIT-HEADER-CONTAINER"><h2 id="INIT-HEADER">Timeline</h2></div>
+      <div class="init-option-container" id="GameButton">
+        <ion-icon class="display" name="caret-forward-sharp"></ion-icon>
+        <p class="init-option" >Play game</p>
+      </div>
+      <div class="init-option-container" id="NormalButton">
+        <ion-icon class="display" name="caret-forward-sharp"></ion-icon>
+        <p class="init-option" >Normal View</p>
+      </div>
+    </div>
+    <div class="Background-overlay">
+      <div class="type-container" id="GameButtonTEXT"><p>Let's have some fun!</p></div>
+      <div class="type-container" id="NormalButtonTEXT"><p>Apply Normal View. </p></div>
+    </div>
 
     <div class="main-status">
       <button class="nav-open-button">
@@ -197,7 +215,10 @@
     <!-- SHOP -->
     <div class="background-mask" id="SHOP">
       <h2 id="SHOP-TITLE">SHOP</h2>
-      <div id="SHOP-GOLD-AMOUNT">TOTAL: <p class="GOLD-UPDATE-JS">200G</p></div>
+      <div id="SHOP-GOLD-AMOUNT">
+        TOTAL:
+        <p class="GOLD-UPDATE-JS">200G</p>
+      </div>
       <div class="shop-item-container">
         <h3 class="shop-item-name">Motivation</h3>
         <p class="shop-item-desc">Reduce wait time for next EXP collection</p>

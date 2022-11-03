@@ -118,8 +118,9 @@ function OnScrollTimeline() {
               "url('../img/timeline/Background/MainImage.jpg')";
           }
         }
+        SetInitGameVisibility(false)
         setGameBarVisibility(false);
-          ChangeNavigationToIcons(false);
+        ChangeNavigationToIcons(false);
         break;
       case "start":
         mainFrontImage.style.backgroundImage =
@@ -131,6 +132,7 @@ function OnScrollTimeline() {
         mainFrontImage.style.backgroundImage =
           GRADIENT + "url('../img/timeline/Background/CJCSGrad.jpg')";
         repeatedCodeinCase();
+        SetInitGameVisibility(true);
         break;
       case "Karate":
         mainFrontImage.style.backgroundImage =
@@ -176,6 +178,7 @@ function OnScrollTimeline() {
         mainFrontImage.classList.add("img-load");
         setGameBarVisibility(false);
         ChangeNavigationToIcons(false);
+        SetInitGameVisibility(false);
         break;
     }
   }
@@ -214,6 +217,7 @@ function repeatedCodeinCase() {
   mainFrontImage.classList.add("img-load");
   setGameBarVisibility(true);
   ChangeNavigationToIcons(true);
+  SetInitGameVisibility(true);
 }
 
 /************************************************/
