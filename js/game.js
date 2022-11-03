@@ -19,7 +19,7 @@ var CURRENT_TIMER_ID;
 
 /*** INITIALIZE ALL EXPERIENCE POINTS */
 const AllContainers = document.querySelectorAll(".timeline-container");
-function INIT_Containers(){
+function INIT_Containers() {
   AllContainers.forEach(function (item) {
     item.querySelector(".timeline-textbox").style.boxShadow = GLOWBOXSHADOW;
     item.addEventListener("click", hover);
@@ -71,6 +71,8 @@ function tutorial(item) {
       item.offsetWidth,
       item.offsetHeight
     );
+    SECONDCONTAINER.style.zIndex = 10;
+    item.style.zIndex = 99;
     currentTutorialStep = 2;
     step2Item = item;
 
@@ -83,10 +85,10 @@ function tutorial(item) {
     tutorialLastClicked = null;
     TUTORIALDESC.innerHTML = "Reduce wait time by buying items from the shop";
     setArrowToShop();
+    item.style.zIndex = 10;
     currentTutorialStep = 3;
   } else if (shopOpennedAfterSecondTutorial) {
     TUTORIALDESC.innerHTML = "Congratulations!! You completed the tutorial!";
-    TUTORIALARROW.style.display = "none";
     window.setTimeout(closeDeactivateTutorial, 2500);
   }
 }
@@ -98,15 +100,18 @@ function closeDeactivateTutorial() {
 
 const SECONDCONTAINER = document.getElementById("second-timeline-container");
 const TUTORIALARROW = document.getElementById("TUTORIALARROW");
+const TUTORIALDIM = document.getElementById("TutorialDim");
 
-function setTutorial(){
+function setTutorial() {
   scrollIntoViewOfElement(SECONDCONTAINER);
+  SECONDCONTAINER.style.zIndex = 99;
   setArrowPos(
     SECONDCONTAINER.offsetLeft,
     SECONDCONTAINER.offsetTop,
     SECONDCONTAINER.offsetWidth,
     SECONDCONTAINER.offsetHeight
   );
+  TutorialDim.style.display = "block";
   tutorialActivated = true;
   TUTORIALDESC.style.display = "block";
   TUTORIAL_YES.style.display = "none";
@@ -117,7 +122,7 @@ function setTutorial(){
     GLOWBOXSHADOW;
   SECONDCONTAINER.addEventListener("click", hover);
   currentTutorialStep = 1;
-};
+}
 
 function scrollIntoViewOfElement(el) {
   el.scrollIntoView({
@@ -163,7 +168,7 @@ let currentLevel = 0;
 let MAXEXP_multiplier = 2.5;
 
 function setGameBarVisibility(bGameBarVisible) {
-  mainStatusBar.style.display = (bGameBarVisible && bGameOn) ? "grid" : "none";
+  mainStatusBar.style.display = bGameBarVisible && bGameOn ? "grid" : "none";
 }
 function AddGameBarEXP(Amount) {
   currentEXP += Amount;
@@ -225,6 +230,7 @@ function openShop() {
   SHOP.style.display = "grid";
   if (currentTutorialStep == 3) {
     TUTORIALARROW.style.display = "none";
+    TutorialDim.style.display = "none";
     shopOpennedAfterSecondTutorial = true;
     TUTORIALDESC.innerHTML = "Collect more EXP by clicking on more boxes";
   }
@@ -236,7 +242,7 @@ function AddGold(amount) {
 }
 
 function updateGold() {
-  GOLD_UPDATE_ELEMENTS.forEach( (GoldUpdate) => {
+  GOLD_UPDATE_ELEMENTS.forEach((GoldUpdate) => {
     console.log(GoldUpdate);
     GoldUpdate.innerHTML = GLOBAL_GOLD + "G";
   });
@@ -282,7 +288,6 @@ function setTimerForTutorial2ScrollUp(item) {
     scrollIntoViewOfElement(item);
 
     ArrowSubIconEl.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"> <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59" /></svg>';
+      '<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 32 32" width="64px" height="64px"><path d="M 9 2.59375 L 9 28.15625 L 10.65625 26.78125 L 14.6875 23.40625 L 16.71875 27.4375 L 17.15625 28.34375 L 18.0625 27.875 L 21.15625 26.28125 L 22.03125 25.84375 L 21.59375 24.9375 L 19.75 21.3125 L 24.8125 20.6875 L 26.84375 20.4375 L 25.40625 19 L 10.71875 4.28125 Z M 11 7.4375 L 22.5625 18.96875 L 18.0625 19.5 L 16.65625 19.6875 L 17.3125 20.96875 L 19.375 24.96875 L 18.0625 25.65625 L 15.90625 21.34375 L 15.3125 20.21875 L 14.34375 21.03125 L 11 23.84375 Z"/></svg>';
   }, 10000);
 }
-

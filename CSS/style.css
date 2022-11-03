@@ -283,7 +283,7 @@ h1 span {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: transparent;
   z-index: 1000;
 }
 
@@ -389,6 +389,26 @@ h1 span {
   background: linear-gradient(to left, #79efff76, transparent 50%);
 }
 
+.init-option-container:hover .display {
+  display: inline-block;
+}
+
+#GameButton {
+  background: linear-gradient(to left, #79efff76, transparent 50%);
+}
+
+#GameButton .display{
+  display: inline-block;
+}
+
+#INIT_GAME:has(#NormalButton:hover) #GameButton{
+  background: none;
+}
+
+#INIT_GAME:has(#NormalButton:hover) #GameButton .display{
+  display: none;
+}
+
 .init-option-container.selectedFlash {
   animation: flash 0.7s forwards linear;
 }
@@ -423,14 +443,11 @@ h1 span {
   }
 }
 
-.init-option-container:hover .display {
-  display: inline-block;
-}
-
 .main-status,
 #EXP-GAIN-TEXT,
 #LEVELUP,
-#TUTORIAL {
+#TUTORIAL,
+#TutorialDim {
   pointer-events: none;
 }
 
@@ -613,13 +630,26 @@ h1 span {
   position: absolute;
   font-size: 12rem;
   z-index: 100;
-  color: #ff0e06;
+  color: #ffffff;
 }
 
 #TUTORIALARROW ion-icon {
   animation: bop 1s infinite;
-  filter: drop-shadow(0rem 0.3rem 0.3rem rgb(255, 30, 30));
+  filter: drop-shadow(0rem 0.3rem 0.3rem rgb(255, 255, 255));
 }
+
+#TutorialDim{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #16171884;
+  z-index: 98;
+}
+
+
 
 .arrow-sub-icon svg {
   filter: drop-shadow(0rem 0.5rem 0.1rem rgb(255, 255, 255));

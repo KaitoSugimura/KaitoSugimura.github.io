@@ -3,7 +3,7 @@ const canHover = window.matchMedia("(hover: hover)").matches;
 /* INTIALIZATION */
 /************************************************/
 var bGameOn = false;
-const BGOverlay = document.querySelector(".Background-overlay"); // To fix mobile hover bug
+const BGOverlay = document.querySelector(".Background-overlay"); 
 
 
 function INIT_GameOn() {
@@ -19,14 +19,16 @@ var bUninitialized = true;
 function InitDone() {
   bUninitialized = false;
   SetInitGameVisibility(false);
-  BGOverlay.style.display = "none";  // To fix mobile hover bug
+  BGOverlay.style.display = "none"; 
 }
 
 function SetInitGameVisibility(turnOn) {
   if (turnOn && bUninitialized) {
     INITGAME.style.display = "block";
+    BGOverlay.style.display = "block"; 
   } else {
     INITGAME.style.display = "none";
+    BGOverlay.style.display = "none"; 
   }
 }
 
@@ -56,7 +58,6 @@ GameButton.addEventListener("click", () => {
 });
 
 function yesInit() {
- BGOverlay.style.display = "none";  // To fix mobile hover bug
   InitDone();
   INIT_GameOn();
   window.setTimeout(setTutorial, 100);
@@ -99,4 +100,20 @@ if (!canHover) {
       LastPressed = 0;
     }
   });
+}
+
+function disableScroll(){
+    document.body.addEventListener('wheel', preventScroll, {passive: false});
+}
+
+function enableScroll(){
+    document.body.removeEventListener('wheel', preventScroll, {passive: false});
+}
+
+
+function preventScroll(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    return false;
 }

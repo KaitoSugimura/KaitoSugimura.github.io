@@ -118,7 +118,7 @@ function OnScrollTimeline() {
               "url('../img/timeline/Background/MainImage.jpg')";
           }
         }
-        SetInitGameVisibility(false)
+        SetInitGameVisibility(false);
         setGameBarVisibility(false);
         ChangeNavigationToIcons(false);
         break;
@@ -258,6 +258,5 @@ ShowMoreButton.forEach(function (item) {
     OnScrollTimeline(); // Update timeline
   });
 });
-
 
 OnScrollTimeline(); // Update timeline
