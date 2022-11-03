@@ -279,10 +279,10 @@ h1 span {
 .Background-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  bottom: 0rem;
+  left: 50%;
+  transform: translate(-50%, -10rem);
   width: 100vw;
-  height: 100vh;
   background-color: transparent;
   z-index: 1000;
 }
@@ -312,6 +312,20 @@ h1 span {
 #INIT_GAME:hover + .Background-overlay {
   background-color: #002448dc;
   display: block;
+  animation: GradOp 1s forwards;
+}
+
+@keyframes GradOp {
+  0%{
+    background-color: #002448dc;
+    height: 30rem;
+    transform: translate(-50%, -10rem);
+  }
+  100%{
+    background-color: #002448dc;
+    height: 120vh;
+    transform: translate(-50%, 10rem);
+  }
 }
 
 #INIT_GAME:has(#GameButton:hover) + .Background-overlay #GameButtonTEXT p {
@@ -333,7 +347,7 @@ h1 span {
   color: #fff;
   background-color: #002448dc;
   z-index: 10000;
-  padding: 1rem 0;
+  padding-top: 4rem;
   animation: typing 1s forwards;
   overflow: hidden;
   white-space: nowrap;
@@ -385,11 +399,15 @@ h1 span {
   }
 }
 
-.init-option-container:hover {
+#NormalButtonOutter{
+  padding-bottom: 4rem;
+}
+
+#NormalButtonOutter:hover .init-option-container {
   background: linear-gradient(to left, #79efff76, transparent 50%);
 }
 
-.init-option-container:hover .display {
+#NormalButtonOutter:hover .init-option-container .display {
   display: inline-block;
 }
 
@@ -401,11 +419,11 @@ h1 span {
   display: inline-block;
 }
 
-#INIT_GAME:has(#NormalButton:hover) #GameButton{
+#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton{
   background: none;
 }
 
-#INIT_GAME:has(#NormalButton:hover) #GameButton .display{
+#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton .display{
   display: none;
 }
 
@@ -446,6 +464,7 @@ h1 span {
 .main-status,
 #EXP-GAIN-TEXT,
 #LEVELUP,
+.Background-overlay,
 #TUTORIAL,
 #TutorialDim {
   pointer-events: none;
