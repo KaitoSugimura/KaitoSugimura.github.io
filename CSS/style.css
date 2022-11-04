@@ -348,12 +348,12 @@ h1 span {
   animation: typing 1.2s steps(20, end);
 }
 
-#INIT_GAME:has(#NormalButton:hover) + .Background-overlay #NormalButtonTEXT p {
+#INIT_GAME:has(#NormalButtonOutter:hover) + .Background-overlay #NormalButtonTEXT p {
   opacity: 1;
   animation: typing 1.2s steps(18, end);
 }
 
-#INIT_GAME:has(#NormalButton:hover) + .Background-overlay #GameButtonTEXT p {
+#INIT_GAME:has(#NormalButtonOutter:hover) + .Background-overlay #GameButtonTEXT p {
   opacity: 0;
   animation: none;
 }
