@@ -211,4 +211,9 @@
   .Background-overlay p{
     font-size: 3.2rem;
   }
+
+  #GameButton,
+  #NormalButtonOutter:hover .init-option-container {
+    background: linear-gradient(to left, #79efff76, transparent);
+  }
 }

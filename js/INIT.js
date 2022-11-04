@@ -102,18 +102,21 @@ if (!canHover) {
   });
 }
 
-function disableScroll(){
-    document.body.addEventListener('wheel', preventScroll, {passive: false});
-}
-
-function enableScroll(){
-    document.body.removeEventListener('wheel', preventScroll, {passive: false});
-}
 
 
-function preventScroll(e){
-    e.preventDefault();
-    e.stopPropagation();
+///////////////////////////////
+// function disableScroll(){
+//     document.body.addEventListener('wheel', preventScroll, {passive: false});
+// }
 
-    return false;
-}
+// function enableScroll(){
+//     document.body.removeEventListener('wheel', preventScroll, {passive: false});
+// }
+
+
+// function preventScroll(e){
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//     return false;
+// }

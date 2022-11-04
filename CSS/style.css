@@ -284,7 +284,7 @@ h1 span {
   transform: translate(-50%, -10rem);
   width: 100vw;
   background-color: transparent;
-  z-index: 1000;
+  z-index: 99;
 }
 
 .Background-overlay p {
@@ -309,9 +309,24 @@ h1 span {
   margin: 0 auto;
 }
 
-#INIT_GAME:hover + .Background-overlay {
+#INIT_GAME {
+  display: none;
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
   background-color: #002448dc;
+  z-index: 10000;
+  padding-top: 4rem;
+  animation: typing 1s forwards;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#INIT_GAME:hover + .Background-overlay {
   display: block;
+  background-color: #002448dc;
   animation: GradOp 1s forwards;
 }
 
@@ -328,29 +343,19 @@ h1 span {
   }
 }
 
-#INIT_GAME:has(#GameButton:hover) + .Background-overlay #GameButtonTEXT p {
+#INIT_GAME:hover + .Background-overlay #GameButtonTEXT p {
   opacity: 1;
   animation: typing 1.2s steps(20, end);
 }
 
 #INIT_GAME:has(#NormalButton:hover) + .Background-overlay #NormalButtonTEXT p {
   opacity: 1;
-  animation: typing 1.4s steps(18, end);
+  animation: typing 1.2s steps(18, end);
 }
 
-#INIT_GAME {
-  display: none;
-  position: fixed;
-  bottom: 10rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-  color: #fff;
-  background-color: #002448dc;
-  z-index: 10000;
-  padding-top: 4rem;
-  animation: typing 1s forwards;
-  overflow: hidden;
-  white-space: nowrap;
+#INIT_GAME:has(#NormalButton:hover) + .Background-overlay #GameButtonTEXT p {
+  opacity: 0;
+  animation: none;
 }
 
 #INIT_GAME:hover {
@@ -403,19 +408,13 @@ h1 span {
   padding-bottom: 4rem;
 }
 
+#GameButton,
 #NormalButtonOutter:hover .init-option-container {
   background: linear-gradient(to left, #79efff76, transparent 50%);
 }
 
+#GameButton .display,
 #NormalButtonOutter:hover .init-option-container .display {
-  display: inline-block;
-}
-
-#GameButton {
-  background: linear-gradient(to left, #79efff76, transparent 50%);
-}
-
-#GameButton .display{
   display: inline-block;
 }
 
