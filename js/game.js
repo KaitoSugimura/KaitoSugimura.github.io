@@ -16,7 +16,11 @@ const LevelTexts = document.querySelectorAll(".Level");
 const EXPGAINEL = document.getElementById("EXP-GAIN-TEXT");
 
 var CURRENT_TIMER_ID;
+
+var BaseExpGain = 500;
+var BaseGoldGain = 25;
 var ExpGainMultiplier = 1.0;
+var GoldGainMultiplier = 1.0;
 
 /*** INITIALIZE ALL EXPERIENCE POINTS */
 const AllContainers = document.querySelectorAll(".timeline-container");
@@ -28,7 +32,7 @@ function INIT_Containers() {
 }
 
 function hover(e) {
-  const AmountOfExp = Math.floor(Math.random() * 200 + 400*ExpGainMultiplier);
+  const AmountOfExp = Math.floor(BaseExpGain * ExpGainMultiplier);
   AddGameBarEXP(AmountOfExp);
   EXPGainText(AmountOfExp, e.clientX, e.clientY);
   tutorial(e.currentTarget);
@@ -41,7 +45,7 @@ function hover(e) {
   e.currentTarget.querySelector(".timeline-textbox").style.boxShadow =
     DEFAULTBOXSHADOW;
 
-  AddGold(Math.floor(Math.random() * 50));
+  AddGold(Math.floor(BaseGoldGain * GoldGainMultiplier));
 }
 
 /** TUTORIAL  **/
@@ -207,6 +211,13 @@ function updateExpText() {
     item.innerHTML = currentEXP + "/" + MAXEXP;
   });
 }
+
+const EXP_CURR_AND_GAIN = document.getElementById("EXP_CURR_AND_GAIN");
+const GOLD_CURR_AND_GAIN = document.getElementById("GOLD_CURR_AND_GAIN");
+const BASESTATS = document.getElementById("BASESTATS");
+
+var queueBaseStateShow = false;
+
 function LevelUp() {
   closeShop();
   currentLevel++;
@@ -216,12 +227,36 @@ function LevelUp() {
   LEVELUP.classList.add("levelup-animation");
   LEVELUP.style.display = "block";
 
+  // EXP bar
   MAXEXP = Math.round(MAXEXP * MAXEXP_multiplier);
   MAXEXP_multiplier = Math.max(1.2, MAXEXP_multiplier - 0.6);
   updateExpText();
+
+  // Base stats
+  const ExpGain = Math.floor(10 + 10 * Math.random());
+  const GoldGain = Math.floor(3.5 * Math.random());
+  EXP_CURR_AND_GAIN.innerHTML = BaseExpGain + "<span> +" + ExpGain + "</span>";
+  GOLD_CURR_AND_GAIN.innerHTML =
+    BaseGoldGain + "<span> +" + GoldGain + "</span>";
+  BaseExpGain += ExpGain;
+  BaseGoldGain += GoldGain;
+  if (BASESTATS.classList.contains("BaseStatsShow")) {
+    queueBaseStateShow = true;
+  }
+  BASESTATS.classList.add("BaseStatsShow");
 }
 
 LEVELUP.addEventListener("animationend", () => {
   mainFrontImage.classList.remove("levelup-animation");
   LEVELUP.style.display = "none";
+});
+
+BASESTATS.addEventListener("animationend", () => {
+  BASESTATS.classList.remove("BaseStatsShow");
+  if (queueBaseStateShow) {
+    queueBaseStateShow = false;
+    window.setTimeout(function () {
+      BASESTATS.classList.add("BaseStatsShow");
+    }, 200);
+  }
 });

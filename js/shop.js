@@ -58,6 +58,12 @@ document.getElementById("B_EFFORT").addEventListener("click", function() {
     ClickOnBuyForItem(EFFORT);
 });
 
+ /** PERSEVERANCE **/
+ const PERSEVERANCE = new Perseverance();
+ document.getElementById("B_PERSEVERANCE").addEventListener("click", function() {
+     ClickOnBuyForItem(PERSEVERANCE);
+ });
+ 
 
 
 

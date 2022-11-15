@@ -724,6 +724,53 @@ h1 span {
   margin-right: 1rem;
 }
 
+/** BASE STATS**/
+#BASESTATS{
+  position: fixed;
+  bottom: 15rem;
+  left: -1rem;
+  width: 32rem;
+  background-color: #070707c0;
+  color: #fff;
+  padding: 2rem 1rem 2rem 6rem;
+  border-radius: 0.4rem;
+  display: none;
+  row-gap: 1rem;
+  grid-template-columns: 5fr 4fr;
+  font-size: 2.4rem;
+  border-right: 1rem solid #fff;
+}
+
+#BASESTATS.BaseStatsShow{
+  display: grid;
+  animation: SlideInFadeOut 4s linear forwards;
+}
+
+@keyframes SlideInFadeOut {
+  0%{
+    opacity: 1;
+    left: -31rem;
+  }
+
+  10%{
+    left: -1rem;
+  }
+
+  90%{
+    opacity: 1;
+    left: -1rem;
+  }
+
+  100%{
+    opacity: 0;
+    left: -31rem;
+  }
+}
+
+.BaseStatsCurrGain span{
+  color: rgb(255, 13, 13);
+}
+
 /** SHOP **/
 #SHOP {
   position: fixed;
