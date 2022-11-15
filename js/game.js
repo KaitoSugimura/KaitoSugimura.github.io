@@ -16,6 +16,7 @@ const LevelTexts = document.querySelectorAll(".Level");
 const EXPGAINEL = document.getElementById("EXP-GAIN-TEXT");
 
 var CURRENT_TIMER_ID;
+var ExpGainMultiplier = 1.0;
 
 /*** INITIALIZE ALL EXPERIENCE POINTS */
 const AllContainers = document.querySelectorAll(".timeline-container");
@@ -27,7 +28,7 @@ function INIT_Containers() {
 }
 
 function hover(e) {
-  const AmountOfExp = Math.floor(Math.random() * 200 + 400);
+  const AmountOfExp = Math.floor(Math.random() * 200 + 400*ExpGainMultiplier);
   AddGameBarEXP(AmountOfExp);
   EXPGainText(AmountOfExp, e.clientX, e.clientY);
   tutorial(e.currentTarget);
@@ -161,11 +162,20 @@ function setArrowToShop() {
   }
 }
 
+function setTimerForTutorial2ScrollUp(item) {
+  window.setTimeout(function () {
+    scrollIntoViewOfElement(item);
+
+    ArrowSubIconEl.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 32 32" width="64px" height="64px"><path d="M 9 2.59375 L 9 28.15625 L 10.65625 26.78125 L 14.6875 23.40625 L 16.71875 27.4375 L 17.15625 28.34375 L 18.0625 27.875 L 21.15625 26.28125 L 22.03125 25.84375 L 21.59375 24.9375 L 19.75 21.3125 L 24.8125 20.6875 L 26.84375 20.4375 L 25.40625 19 L 10.71875 4.28125 Z M 11 7.4375 L 22.5625 18.96875 L 18.0625 19.5 L 16.65625 19.6875 L 17.3125 20.96875 L 19.375 24.96875 L 18.0625 25.65625 L 15.90625 21.34375 L 15.3125 20.21875 L 14.34375 21.03125 L 11 23.84375 Z"/></svg>';
+  }, 10000);
+}
+
 /** GAME FUNCTIONALITY **/
-let MAXEXP = 500;
+let MAXEXP = 500; // EXP to level up
 let currentEXP = 0;
 let currentLevel = 0;
-let MAXEXP_multiplier = 2.5;
+let MAXEXP_multiplier = 2.5; // EXP multiplier to level up
 
 function setGameBarVisibility(bGameBarVisible) {
   mainStatusBar.style.display = bGameBarVisible && bGameOn ? "grid" : "none";
@@ -215,79 +225,3 @@ LEVELUP.addEventListener("animationend", () => {
   mainFrontImage.classList.remove("levelup-animation");
   LEVELUP.style.display = "none";
 });
-
-/** SHOP **/
-const SHOP = document.getElementById("SHOP");
-const SHOPOPENBUTTON = document.getElementById("LINKSHOP");
-const SHOPCLOSEBUTTON = document.getElementById("SHOPCLOSEBUTTON");
-const GOLD_UPDATE_ELEMENTS = document.querySelectorAll(".GOLD-UPDATE-JS");
-
-function closeShop() {
-  SHOP.style.display = "none";
-}
-
-function openShop() {
-  SHOP.style.display = "grid";
-  if (currentTutorialStep == 3) {
-    TUTORIALARROW.style.display = "none";
-    TutorialDim.style.display = "none";
-    shopOpennedAfterSecondTutorial = true;
-    TUTORIALDESC.innerHTML = "Collect more EXP by clicking on more boxes";
-  }
-}
-
-function AddGold(amount) {
-  GLOBAL_GOLD += amount;
-  updateGold();
-}
-
-function updateGold() {
-  GOLD_UPDATE_ELEMENTS.forEach((GoldUpdate) => {
-    console.log(GoldUpdate);
-    GoldUpdate.innerHTML = GLOBAL_GOLD + "G";
-  });
-}
-
-SHOPOPENBUTTON.addEventListener("click", () => {
-  openShop();
-});
-
-SHOPCLOSEBUTTON.addEventListener("click", () => {
-  closeShop();
-});
-
-// COST
-var MOTIVATION_COST = 200;
-const MOTIVATIONPRICE = document.getElementById("MOTIVATIONPRICE");
-// BUTTONS
-const B_MOTIVATION = document.getElementById("B_MOTIVATION");
-// SKILLS
-const SKILLTIMEAMOUNT = document.getElementById("SKILLTIME");
-
-B_MOTIVATION.addEventListener("click", function buyMotivation() {
-  if (GLOBAL_GOLD >= MOTIVATION_COST) {
-    GLOBAL_GOLD -= MOTIVATION_COST;
-    AddMotivationCost();
-    GLOBAL_RESET_TIMER -= 500;
-    if (GLOBAL_RESET_TIMER <= 500) {
-      B_MOTIVATION.removeEventListener("click", buyMotivation);
-    }
-
-    SKILLTIMEAMOUNT.innerHTML = (GLOBAL_RESET_TIMER / 1000).toFixed(2);
-  }
-  updateGold();
-});
-
-function AddMotivationCost() {
-  MOTIVATION_COST = Math.floor(MOTIVATION_COST * (Math.random() + 1));
-  MOTIVATIONPRICE.innerHTML = MOTIVATION_COST + "G";
-}
-
-function setTimerForTutorial2ScrollUp(item) {
-  window.setTimeout(function () {
-    scrollIntoViewOfElement(item);
-
-    ArrowSubIconEl.innerHTML =
-      '<svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 32 32" width="64px" height="64px"><path d="M 9 2.59375 L 9 28.15625 L 10.65625 26.78125 L 14.6875 23.40625 L 16.71875 27.4375 L 17.15625 28.34375 L 18.0625 27.875 L 21.15625 26.28125 L 22.03125 25.84375 L 21.59375 24.9375 L 19.75 21.3125 L 24.8125 20.6875 L 26.84375 20.4375 L 25.40625 19 L 10.71875 4.28125 Z M 11 7.4375 L 22.5625 18.96875 L 18.0625 19.5 L 16.65625 19.6875 L 17.3125 20.96875 L 19.375 24.96875 L 18.0625 25.65625 L 15.90625 21.34375 L 15.3125 20.21875 L 14.34375 21.03125 L 11 23.84375 Z"/></svg>';
-  }, 10000);
-}

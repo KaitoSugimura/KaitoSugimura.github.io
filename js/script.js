@@ -1,7 +1,8 @@
 "use strict";
 
+// Gradient used for background image
 const GRADIENT =
-  "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.2)),";
+  "linear-gradient(rgba(34, 34, 34, 0.2),rgba(34, 34, 34, 0.2)),"; 
 const TIMELINEMIDPOINT = 0.8;
 const TIMELINEENDPERCENT = 100;
 
@@ -27,13 +28,6 @@ function OnScrollTimeline() {
 
   // Update scroll progress bar
   scrollProgressEl.style.width = Math.round(percent) + "%";
-
-  // /* Make Youtube Icon appear when 400 distance away from top */
-  // if (distanceFromTop > 400) {
-  //   document.body.classList.add("YoutubeIconAppear");
-  // } else {
-  //   document.body.classList.remove("YoutubeIconAppear");
-  // }
 
   /** Scroll timeline-line */
   const timeline = document.querySelector(".timeline");
@@ -85,12 +79,6 @@ function OnScrollTimeline() {
     }
   });
 
-  // const YouTubeCircleIconText = document.querySelector(".icon-text");
-  // if (currentLoopSection !== "" && currentLoopSection !== "end") {
-  //   YouTubeCircleIconText.style.color = "#fff";
-  // } else {
-  //   YouTubeCircleIconText.style.color = "#000";
-  // }
 
   const sectionExperienceEl = document.querySelector(".section-experience");
 
@@ -219,25 +207,6 @@ function repeatedCodeinCase() {
   ChangeNavigationToIcons(true);
   SetInitGameVisibility(true);
 }
-
-/************************************************/
-/* YOUTUBE ICON  */
-/************************************************/
-// const text = document.querySelector(".icon-text p");
-// text.innerHTML = text.innerText
-//   .split("")
-//   .map(
-//     (char, i) => `<span style="transform:rotate(${i * 7}deg)">${char}</span>`
-//   )
-//   .join("");
-
-// /* Remove YoutubeIconClicked class for non hover devices
-//     when clicked on somewhere else on page */
-// document.addEventListener("click", function (e) {
-//   if (!e.target.closest(".icon-container")) {
-//     document.body.classList.remove("YoutubeIconClicked");
-//   }
-// });
 
 /************************************************/
 /* SHOW MORE  */

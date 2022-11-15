@@ -42,8 +42,9 @@
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
     ></script>
     <script defer src="js/INIT.js"></script>
-    <script defer src="js/preload.js"></script>
     <script defer src="js/game.js"></script>
+    <script defer src="js/itemClasses.js"></script>
+    <script defer src="js/shop.js"></script>
     <script defer src="js/navigation.js"></script>
     <script defer src="js/script.js"></script>
 
@@ -178,8 +179,8 @@
       <div class="vertical-line-division"></div>
       <div id="SKILL-STAT-CONTAINER">
         <div id="SKILLS-CONTAINER">
-          <p class="skill">Time: <span id="SKILLTIME"></span></p>
-          <p class="skill">Exp_X:</p>
+          <p class="skill">Time: <span id="SKILLMOTIVATION"></span></p>
+          <p class="skill">Exp_X: <span id="SKILLEFFORT"></span></p>
           <p class="skill">Gold_X:</p>
         </div>
         <div class="flex-spacebetween align-self-end" id="JOB-GOLD-CONTAINER">
@@ -227,10 +228,10 @@
         <button class="shop-item-buy-button" id="B_MOTIVATION">Buy</button>
       </div>
       <div class="shop-item-container">
-        <h3 class="shop-item-name">TBA</h3>
-        <p class="shop-item-desc">This item is still not implemented</p>
-        <p class="shop-item-price">500G</p>
-        <button class="shop-item-buy-button">Buy</button>
+        <h3 class="shop-item-name">Effort</h3>
+        <p class="shop-item-desc">Increase the EXP gain per click</p>
+        <p class="shop-item-price" id="EFFORTPRICE">500G</p>
+        <button class="shop-item-buy-button" id="B_EFFORT">Buy</button>
       </div>
       <div class="shop-item-container">
         <h3 class="shop-item-name">TBA</h3>
