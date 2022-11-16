@@ -48,9 +48,12 @@ function ClickOnBuyForItem(ItemClass){
 
  /** MOTIVATION **/
  const MOTIVATION = new Motivation();
-document.getElementById("B_MOTIVATION").addEventListener("click", function() {
-    ClickOnBuyForItem(MOTIVATION);
-});
+ const B_MOTIVATION = document.getElementById("B_MOTIVATION");
+ B_MOTIVATION.addEventListener("click", buyMotivation);
+
+function buyMotivation() {
+  ClickOnBuyForItem(MOTIVATION);
+}
 
  /** EFFORT **/
 const EFFORT = new Effort();

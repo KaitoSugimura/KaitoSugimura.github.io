@@ -16,8 +16,10 @@ class Motivation {
 
   Configure() {
     GLOBAL_RESET_TIMER -= 500;
-    if (GLOBAL_RESET_TIMER <= 500) {
+    if (GLOBAL_RESET_TIMER <= 0) {
+      GLOBAL_RESET_TIMER = 0;
       B_MOTIVATION.removeEventListener("click", buyMotivation);
+      B_MOTIVATION.innerHTML = "Sold out";
     }
 
     this.SKILL.innerHTML = (GLOBAL_RESET_TIMER / 1000).toFixed(2);
