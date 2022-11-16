@@ -331,12 +331,12 @@ h1 span {
 }
 
 @keyframes GradOp {
-  0%{
+  0% {
     background-color: #002448dc;
     height: 30rem;
     transform: translate(-50%, -10rem);
   }
-  100%{
+  100% {
     background-color: #002448dc;
     height: 120vh;
     transform: translate(-50%, 10rem);
@@ -348,12 +348,18 @@ h1 span {
   animation: typing 1.2s steps(20, end);
 }
 
-#INIT_GAME:has(#NormalButtonOutter:hover) + .Background-overlay #NormalButtonTEXT p {
+#INIT_GAME:has(#NormalButtonOutter:hover)
+  + .Background-overlay
+  #NormalButtonTEXT
+  p {
   opacity: 1;
   animation: typing 1.2s steps(18, end);
 }
 
-#INIT_GAME:has(#NormalButtonOutter:hover) + .Background-overlay #GameButtonTEXT p {
+#INIT_GAME:has(#NormalButtonOutter:hover)
+  + .Background-overlay
+  #GameButtonTEXT
+  p {
   opacity: 0;
   animation: none;
 }
@@ -404,7 +410,7 @@ h1 span {
   }
 }
 
-#NormalButtonOutter{
+#NormalButtonOutter {
   padding-bottom: 4rem;
 }
 
@@ -418,11 +424,11 @@ h1 span {
   display: inline-block;
 }
 
-#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton{
+#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton {
   background: none;
 }
 
-#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton .display{
+#INIT_GAME:has(#NormalButtonOutter:hover) #GameButton .display {
   display: none;
 }
 
@@ -656,7 +662,7 @@ h1 span {
   filter: drop-shadow(0rem 0.3rem 0.3rem rgb(255, 255, 255));
 }
 
-#TutorialDim{
+#TutorialDim {
   display: none;
   position: fixed;
   top: 0;
@@ -666,8 +672,6 @@ h1 span {
   background-color: #16171884;
   z-index: 98;
 }
-
-
 
 .arrow-sub-icon svg {
   filter: drop-shadow(0rem 0.5rem 0.1rem rgb(255, 255, 255));
@@ -725,7 +729,7 @@ h1 span {
 }
 
 /** BASE STATS**/
-#BASESTATS{
+#BASESTATS {
   position: fixed;
   bottom: 15rem;
   left: -1rem;
@@ -741,33 +745,33 @@ h1 span {
   border-right: 1rem solid #fff;
 }
 
-#BASESTATS.BaseStatsShow{
+#BASESTATS.BaseStatsShow {
   display: grid;
   animation: SlideInFadeOut 4s linear forwards;
 }
 
 @keyframes SlideInFadeOut {
-  0%{
+  0% {
     opacity: 1;
     left: -31rem;
   }
 
-  10%{
+  10% {
     left: -1rem;
   }
 
-  90%{
+  90% {
     opacity: 1;
     left: -1rem;
   }
 
-  100%{
+  100% {
     opacity: 0;
     left: -31rem;
   }
 }
 
-.BaseStatsCurrGain span{
+.BaseStatsCurrGain span {
   color: rgb(255, 13, 13);
 }
 
@@ -789,6 +793,11 @@ h1 span {
 
   color: white;
   font-size: 1rem;
+  z-index: 1000;
+  background-color: rgb(66, 70, 75);
+  background: linear-gradient(20deg, rgb(66, 70, 75), rgb(135, 138, 140) 90%);
+  border: rgb(36, 35, 35) 0.4rem solid;
+  box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.468);
 }
 
 #SHOP-TITLE {
@@ -821,22 +830,47 @@ h1 span {
   justify-content: center;
   padding: 2.4em 1em;
   color: #000;
-  background-color: #fffffff8;
-  border: #000000 solid 0.4rem;
+  /* background: linear-gradient(#f3faff, 55%, #3284d1); */
+
+background: linear-gradient(180deg, #f3faff, rgba(255,0,0,0) 70.71%),
+linear-gradient(140deg, #4298e7, #db3f3f5f 100%),
+linear-gradient(220deg, #3284d1, #3284d1a9 100%);
+
+
+  border: #141313 solid 0.3rem;
+  transition: all 0.3s;
+  position: relative;
 }
 
 .shop-item-container:hover {
   transform: scale(100.5%);
+  background: 
+  linear-gradient(180deg, #f3faff, rgba(255,0,0,0) 70.71%),
+  linear-gradient(140deg, #4d9ae1, #e13f3f7d 100%),
+  linear-gradient(220deg, #3284d1, #4a8fd0a9 100%);
+}
+
+.shop-item-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20rem;
+  opacity: 0.2;
+  color : #333;
+  z-index: 1;
 }
 
 .shop-item-name {
   font-size: 3.2em;
   margin-bottom: 3.2rem;
+  z-index: 2;
 }
 
 .shop-item-desc {
   font-size: 2.4em;
   margin-bottom: 3.2em;
+  z-index: 2;
 }
 
 .shop-item-price {
@@ -877,9 +911,14 @@ h1 span {
   right: 0;
   width: 1.5em;
   height: 1.5em;
-  font-size: 2.8rem;
+  font-size: 3.4rem;
   transform: translate(30%, -30%);
-  background-color: rgba(196, 51, 51, 0.868);
+  background-color: rgb(234, 234, 234);
+  transition: all 0.3s;
+}
+
+#SHOPCLOSEBUTTON:hover {
+  background-color: rgb(196, 51, 51);
 }
 
 #MAIN-GOLD-AMOUNT {
