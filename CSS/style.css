@@ -13,10 +13,10 @@
   position: relative;
   background-image: linear-gradient(
       to left,
-      rgba(175, 175, 175, 0),
-      rgba(175, 175, 175, 0),
+      rgb(255, 255, 255, 0),
+      rgb(255, 255, 255, 0),
       rgba(26, 43, 72, 0.4) 55%,
-      rgba(38, 59, 97, 0.8)
+      rgba(38, 59, 97, 0.75)
     );
   background-size: cover;
   color: #fff;
