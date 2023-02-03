@@ -12,10 +12,12 @@
   height: 100vh;
   position: relative;
   background-image: linear-gradient(
-    to left,
-    rgba(175, 175, 175, 0),
-    rgba(26, 43, 72, 0.75)
-  );
+      to left,
+      rgba(175, 175, 175, 0),
+      rgba(175, 175, 175, 0),
+      rgba(26, 43, 72, 0.4) 55%,
+      rgba(38, 59, 97, 0.8)
+    );
   background-size: cover;
   color: #fff;
 }
@@ -832,10 +834,9 @@ h1 span {
   color: #000;
   /* background: linear-gradient(#f3faff, 55%, #3284d1); */
 
-background: linear-gradient(180deg, #f3faff, rgba(255,0,0,0) 70.71%),
-linear-gradient(140deg, #4298e7, #db3f3f5f 100%),
-linear-gradient(220deg, #3284d1, #3284d1a9 100%);
-
+  background: linear-gradient(180deg, #f3faff, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(140deg, #4298e7, #db3f3f5f 100%),
+    linear-gradient(220deg, #3284d1, #3284d1a9 100%);
 
   border: #141313 solid 0.3rem;
   transition: all 0.3s;
@@ -844,10 +845,9 @@ linear-gradient(220deg, #3284d1, #3284d1a9 100%);
 
 .shop-item-container:hover {
   transform: scale(100.5%);
-  background: 
-  linear-gradient(180deg, #f3faff, rgba(255,0,0,0) 70.71%),
-  linear-gradient(140deg, #4d9ae1, #e13f3f7d 100%),
-  linear-gradient(220deg, #3284d1, #4a8fd0a9 100%);
+  background: linear-gradient(180deg, #f3faff, rgba(255, 0, 0, 0) 70.71%),
+    linear-gradient(140deg, #4d9ae1, #e13f3f7d 100%),
+    linear-gradient(220deg, #3284d1, #4a8fd0a9 100%);
 }
 
 .shop-item-icon {
@@ -857,7 +857,7 @@ linear-gradient(220deg, #3284d1, #3284d1a9 100%);
   transform: translate(-50%, -50%);
   font-size: 20rem;
   opacity: 0.2;
-  color : #333;
+  color: #333;
   z-index: 1;
 }
 
